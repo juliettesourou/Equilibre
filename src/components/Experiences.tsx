@@ -1,7 +1,7 @@
 import Title from './Title'
 import { useInView } from '../hooks/useInView'
 import { CheckCircle2, Database, BarChart3, Microscope, Fish, Leaf } from 'lucide-react'
-import pythonImage from '../assets/img/python.png'
+import pythonImage from '../assets/img/Python.png'
 import xlstatImage from '../assets/img/XLSTAT.png'
 
 const skills = [
