@@ -1,77 +1,165 @@
-import Title from './Title'
-import { useInView } from '../hooks/useInView'
-
-const qualities = [
-  "Développement d'interfaces web modernes et lisibles",
-  "Conception d'API et logique métier back-end",
-  "Réalisation d'applications mobiles orientées utilisateur",
-]
+import Title from "./Title";
+import { CheckCircle2, UserRound, Target } from "lucide-react";
+import { useInView } from "../hooks/useInView";
+import portrait from "../assets/img/qui suis-je.jpeg";
 
 const strengths = [
-  "J'interviens sur toute la chaîne de développement, de la structure technique au rendu final.",
-  "Je privilégie les interfaces simples, les flux clairs et un code organisé pour faciliter la maintenance.",
-  "Mes projets mêlent besoins académiques, usage réel et sens du détail dans l'expérience utilisateur.",
-]
+  "Je suis Dr Houeto Madel Floriane, Docteure en Sciences biologiques, spécialisée en écologie évolutive et fonctionnelle, avec un intérêt particulier pour les organismes aquatiques.",
+
+  "Mes recherches portent sur la compréhension des mécanismes qui régissent la vie des espèces aquatiques, leur développement, leur adaptation et leurs interactions avec les changements environnementaux.",
+
+  "Mon expertise associe la recherche scientifique, l'analyse des données, l'écologie appliquée, la biologie des organismes et la conservation de la biodiversité."
+];
+
+const goals = [
+  "Mettre mes compétences scientifiques au service de projets de recherche en écologie, biodiversité et conservation des milieux naturels.",
+
+  "Contribuer à des études environnementales, des programmes de suivi écologique, des évaluations d'impact environnemental et des actions de conservation de la biodiversité.",
+
+  "Développer des collaborations scientifiques nationales et internationales autour de l'écologie aquatique, de la gestion durable des écosystèmes et de l'analyse des données environnementales."
+];
+
+const journey = [
+  "Mon parcours universitaire est consacré à l'écologie évolutive et fonctionnelle, une discipline qui étudie les relations entre les organismes, leurs fonctions biologiques, leur évolution et leur environnement.",
+
+  "J'ai développé mes compétences scientifiques au sein du Laboratoire de Recherche en Écologie, Biologie et Physiologie des Organismes, où mes travaux se sont orientés vers l'écologie aquatique et la biologie des poissons.",
+
+  "Mes recherches doctorales portent sur l'utilisation des otolithes comme outils biologiques permettant d'étudier la croissance, la morphologie, la microchimie et la structuration des populations de poissons.",
+
+  "Au cours de mes travaux, j'ai étudié plusieurs espèces provenant de milieux lagunaires, lacustres et marins en utilisant des approches morphométriques, statistiques et écologiques pour mieux comprendre leur dynamique et leur adaptation."
+];
 
 const About = () => {
-  const [gridRef, gridInView] = useInView()
+  const [gridRef, gridInView] = useInView();
+
   return (
-    <section className='bg-[#f7f3ee] py-20'>
-      <div className='section-shell'>
+    <section className="rounded-[2rem] bg-white p-6 shadow-[0_28px_70px_-52px_rgba(12,77,59,0.48)] md:p-10">
+      <div className="section-shell w-full !max-w-none">
         <Title
-          title="Un profil polyvalent, centré sur l'utilité"
-          eyebrow='Profil'
-          subtitle="Je construis des interfaces, des API et des applications mobiles avec une attention portée à la clarté du code et à l'expérience utilisateur."
+          title="À propos"
+          eyebrow="À propos"
+          subtitle="Découvrez mon parcours scientifique, mes domaines d'expertise et mes objectifs en écologie aquatique et en conservation de la biodiversité."
         />
 
-        <div ref={gridRef} className='grid gap-6 lg:grid-cols-[1.15fr_0.85fr]'>
-          <div
-            style={{ animationDelay: '0ms' }}
-            className={`rounded-[2rem] bg-slate-950 p-8 text-white shadow-[0_32px_80px_-42px_rgba(15,23,42,0.85)] md:p-10 ${gridInView ? 'anim-fade-up' : 'opacity-0'}`}
-          >
-            <p className='max-w-2xl text-base leading-8 text-slate-200'>
-              Étudiante en fin de licence professionnelle en Génie Électrique / Systèmes d&apos;Information, je développe des solutions web et mobiles avec une approche structurée, sobre et orientée usage. Je cherche à créer des produits qui inspirent confiance, autant dans leur apparence que dans leur fonctionnement.
-            </p>
+        <div ref={gridRef} className="space-y-6">
 
-            <div className='mt-8 grid gap-4 sm:grid-cols-3'>
-              {qualities.map((q) => (
-                <div key={q} className='rounded-3xl border border-white/10 bg-white/5 p-5'>
-                  <p className='text-sm leading-6 text-slate-100'>{q}</p>
+          {/* Qui suis-je */}
+          <div
+            style={{ animationDelay: "0ms" }}
+            className={`glass-card elegant-card rounded-[1.75rem] border border-[#E2F0EA] bg-[#F9FCFB] p-8 ${
+              gridInView ? "anim-fade-up" : "opacity-0"
+            }`}
+          >
+            <div className="mb-6 flex items-center gap-3">
+              <span className="flex h-11 w-11 items-center justify-center rounded-full bg-[#E6F5EF] text-[#0E6B54]">
+                <UserRound className="h-5 w-5" />
+              </span>
+
+              <h3 className="text-xl font-semibold text-[#163229]">
+                Qui suis-je ?
+              </h3>
+            </div>
+
+            <div className="grid gap-8 lg:grid-cols-[1.08fr_0.92fr] lg:items-stretch">
+              <div className="relative min-h-[520px] overflow-hidden rounded-[1.75rem] border border-[#D7EAE2] bg-white shadow-[0_30px_60px_-40px_rgba(14,107,84,0.42)]">
+                <div className="absolute inset-0 bg-gradient-to-br from-[#F6FBF9] via-transparent to-[#E4F2EC]/50" />
+                <img
+                  src={portrait}
+                  alt="Portrait professionnel de Dr Houeto Madel Floriane"
+                  className="h-full w-full object-cover object-top"
+                />
+                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#0F3128]/88 via-[#0F3128]/26 to-transparent px-6 pb-6 pt-20 text-white">
+                  <p className="text-[0.72rem] font-semibold uppercase tracking-[0.3em] text-[#D9EEE6]">
+                    Profil professionnel
+                  </p>
+                  <p className="mt-2 text-xl font-semibold leading-snug">
+                    Dr Houeto Madel Floriane
+                  </p>
+                  <p className="mt-2 max-w-sm text-sm leading-6 text-[#E4F3ED]">
+                    Spécialiste en écologie évolutive et fonctionnelle, avec
+                    une expertise dédiée aux milieux aquatiques et à la
+                    biodiversité.
+                  </p>
                 </div>
-              ))}
-            </div>
-          </div>
+              </div>
 
-          <div
-            style={{ animationDelay: '130ms' }}
-            className={`space-y-6 ${gridInView ? 'anim-fade-up' : 'opacity-0'}`}
-          >
-            <div className='rounded-[2rem] border border-slate-200 bg-white p-7 shadow-sm'>
-              <h3 className='text-sm font-semibold uppercase tracking-[0.28em] text-[#b76e4d]'>Points forts</h3>
-              <ul className='mt-5 space-y-4'>
-                {strengths.map((s) => (
-                  <li key={s} className='text-sm leading-7 text-slate-600'>
-                    {s}
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div className='rounded-[2rem] border border-slate-200 bg-white p-7 shadow-sm'>
-              <h3 className='text-sm font-semibold uppercase tracking-[0.28em] text-[#b76e4d]'>Outils essentiels</h3>
-              <div className='mt-5 flex flex-wrap gap-2'>
-                {['Git', 'GitHub', 'Postman', 'VS Code', 'MySQL', 'PostgreSQL', 'UML', 'Merise'].map((t) => (
-                  <span key={t} className='rounded-full bg-slate-100 px-3 py-2 text-xs font-medium text-slate-700'>
-                    {t}
+              <div className="flex flex-col justify-start pt-3 lg:pt-1">
+                <div className="mb-4 flex flex-wrap gap-2">
+                  <span className="rounded-full bg-[#EAF6F1] px-3 py-1 text-xs font-semibold text-[#0E6B54]">
+                    Docteure en sciences biologiques
                   </span>
-                ))}
+                  <span className="rounded-full bg-[#F1F8F5] px-3 py-1 text-xs font-semibold text-[#31594D]">
+                    Recherche appliquée
+                  </span>
+                </div>
+
+                <div className="space-y-4 text-base leading-8 text-[#4A645B]">
+                  {strengths.map((item) => (
+                    <p key={item}>{item}</p>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
+
+          {/* Objectifs */}
+          <div
+            style={{ animationDelay: "130ms" }}
+            className={`glass-card elegant-card rounded-[1.75rem] border border-[#E2F0EA] bg-[#F9FCFB] p-8 ${
+              gridInView ? "anim-fade-up" : "opacity-0"
+            }`}
+          >
+            <div className="mb-6 flex items-center gap-3">
+              <span className="flex h-11 w-11 items-center justify-center rounded-full bg-[#E6F5EF] text-[#0E6B54]">
+                <Target className="h-5 w-5" />
+              </span>
+
+              <h3 className="text-xl font-semibold text-[#163229]">
+                Mes objectifs
+              </h3>
+            </div>
+
+            <ul className="space-y-5">
+              {goals.map((goal) => (
+                <li
+                  key={goal}
+                  className="flex items-start gap-3 text-sm leading-7 text-[#4A645B] md:text-[0.98rem]"
+                >
+                  <CheckCircle2 className="mt-1 h-5 w-5 shrink-0 text-[#0E6B54]" />
+                  <span>{goal}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
         </div>
+
+        {/* Parcours */}
+        <div
+          style={{ animationDelay: "220ms" }}
+          className={`glass-card elegant-card mt-6 rounded-[1.75rem] border border-[#E2F0EA] bg-[linear-gradient(180deg,#ffffff_0%,#f6fbf9_100%)] p-8 shadow-[0_20px_45px_-34px_rgba(12,80,61,0.2)] ${
+            gridInView ? "anim-fade-up" : "opacity-0"
+          }`}
+        >
+          <h3 className="text-xl font-semibold text-[#163229]">
+            Mon parcours scientifique
+          </h3>
+
+          <div className="mt-5 grid gap-4 md:grid-cols-2">
+            {journey.map((item) => (
+              <div
+                key={item}
+                className="rounded-[1.25rem] border border-[#E5F1EC] bg-white/90 p-5 text-sm leading-7 text-[#4A645B] transition duration-300 hover:border-[#CFE6DC] hover:bg-white"
+              >
+                {item}
+              </div>
+            ))}
+          </div>
+        </div>
+
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default About
+export default About;

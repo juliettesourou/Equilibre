@@ -1,85 +1,136 @@
-import { ArrowRight, Mail, Code2, Globe } from 'lucide-react'
-import imaa from '../assets/imaa.png'
+import { ArrowRight, Mail, Globe2, ScrollText } from "lucide-react";
+import imaa from "../assets/img/profill.jpeg";
+import background from "../assets/img/ecosysteme.jpg";
 
 const socials = [
-  { icon: Code2,  href: 'https://github.com/juliettesourou', label: 'GitHub' },
-  { icon: Globe,  href: '#',                                  label: 'LinkedIn' },
-  { icon: Mail,   href: 'mailto:sounouvouliette10@gmail.com', label: 'Email' },
-]
+  {
+    icon: Globe2,
+    href: "https://www.linkedin.com/",
+    label: "LinkedIn",
+  },
+  {
+    icon: ScrollText,
+    href: "/CV_Madel_Floriane_Adjibayo.pdf",
+    label: "CV",
+  },
+  {
+    icon: Mail,
+    href: "mailto:floriane.adjibayo@email.com",
+    label: "Email",
+  },
+];
 
 const Home = () => {
   return (
-    <section className='flex min-h-[92vh] items-center py-16'>
-      <div className='grid w-full items-center gap-12 md:grid-cols-[1.1fr_0.9fr]'>
+    <section className="relative overflow-hidden rounded-[2rem] border border-[#DDEEE8] bg-white shadow-[0_30px_80px_-48px_rgba(13,74,58,0.45)]">
+      <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[#EFF8F4] to-transparent"></div>
 
-        {/* ── Text ── */}
-        <div>
-          <div className='hero-eyebrow mb-6 inline-flex items-center gap-2 rounded-full border border-[#3C1718] bg-[#3C1718] px-4 py-2 text-xs font-medium text-[#C4B0A7]'>
-            <Code2 className='h-3.5 w-3.5 text-[#8E1F24]' />
-            Développeuse Full Stack
-          </div>
+      <div className="grid items-center gap-8 px-6 py-10 md:grid-cols-[0.95fr_1.05fr] md:px-10 md:py-14">
 
-          <p className='hero-sub text-sm text-[#AF978F]'>Bonjour, je suis</p>
+        {/* Texte */}
+        <div className="relative z-10">
+          <div className="flex items-start gap-4">
 
-          <h1 className='hero-title mt-2 text-5xl font-bold leading-tight tracking-tight md:text-6xl'>
-            <span className='text-[#F5ECE8]'>Juliette </span>
-            <span className='text-[#8E1F24]'>Sounouvou</span>
-          </h1>
+            <div className="hidden flex-col gap-3 pt-12 md:flex">
+              {socials.map(({ icon: Icon, href, label }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target={href.startsWith("http") ? "_blank" : undefined}
+                  rel={href.startsWith("http") ? "noreferrer" : undefined}
+                  className="flex h-11 w-11 items-center justify-center rounded-2xl border border-[#D8EBE3] bg-white text-[#0E6B54] shadow-sm transition hover:-translate-y-1 hover:border-[#0E6B54]"
+                >
+                  <Icon className="h-5 w-5" />
+                </a>
+              ))}
+            </div>
 
-          <p className='hero-sub mt-4 text-lg font-medium text-[#D4C2B9]'>
-            Développeuse Full Stack Web &amp; Mobile
-          </p>
+            <div className="max-w-xl">
 
-          <p className='hero-sub mt-4 max-w-lg text-base leading-8 text-[#AF978F]'>
-            Je conçois et développe des applications web et mobiles modernes, performantes et adaptées aux besoins réels.
-          </p>
+              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#2D5F50]">
+                Docteure en Sciences Biologiques
+              </p>
 
-          <div className='hero-cta mt-8 flex flex-wrap gap-3'>
-            <a
-              href='#projects'
-              className='inline-flex items-center gap-2 rounded-full bg-[#8E1F24] px-6 py-3 text-sm font-medium text-white transition hover:bg-[#A52020]'
-            >
-              Voir mes projets <ArrowRight className='h-4 w-4' />
-            </a>
-            <a
-              href='#contact'
-              className='inline-flex items-center gap-2 rounded-full border border-[#3C1718] px-6 py-3 text-sm font-medium text-[#C4B0A7] transition hover:border-[#8E1F24] hover:text-[#F5ECE8]'
-            >
-              <Mail className='h-4 w-4' /> Me contacter
-            </a>
-          </div>
+              <h1 className="mt-3 text-4xl font-bold leading-tight text-[#11372D] md:text-6xl">
+                Dr Madel Floriane
+                <br />
+                <span className="text-[#0E6B54]">Adjibayo</span>
+              </h1>
 
-          <div className='hero-meta mt-8 flex gap-3'>
-            {socials.map(({ icon: Icon, href, label }) => (
-              <a
-                key={label}
-                href={href}
-                target={href.startsWith('http') ? '_blank' : undefined}
-                rel={href.startsWith('http') ? 'noreferrer' : undefined}
-                aria-label={label}
-                className='flex h-10 w-10 items-center justify-center rounded-full border border-[#3C1718] text-[#C4B0A7] transition hover:border-[#8E1F24] hover:text-[#8E1F24]'
-              >
-                <Icon className='h-4 w-4' />
-              </a>
-            ))}
+              <p className="mt-6 text-xl font-semibold leading-relaxed text-[#1E6C58]">
+                Écologie évolutive et fonctionnelle • Écologie aquatique •
+                Biologie des organismes
+              </p>
+
+              <p className="mt-6 text-lg leading-8 text-[#4C675E]">
+                Docteure en sciences biologiques, spécialisée en écologie
+                évolutive et fonctionnelle. Mes recherches portent sur les
+                organismes aquatiques, leurs interactions avec leur
+                environnement et leur capacité d’adaptation aux changements
+                environnementaux, afin de contribuer à la conservation de la
+                biodiversité et à la gestion durable des écosystèmes.
+              </p>
+
+              <div className="mt-10 flex flex-wrap gap-4">
+                <a
+                  href="#about"
+                  className="inline-flex items-center gap-2 rounded-full bg-[#0E6B54] px-7 py-3 text-sm font-semibold text-white transition hover:bg-[#0B5643]"
+                >
+                  Découvrir mon parcours
+                  <ArrowRight className="h-4 w-4" />
+                </a>
+
+                <a
+                  href="#contact"
+                  className="inline-flex items-center gap-2 rounded-full border border-[#D7E8E0] bg-white px-7 py-3 text-sm font-semibold text-[#19483C] transition hover:border-[#0E6B54] hover:text-[#0E6B54]"
+                >
+                  <Mail className="h-4 w-4" />
+                  Me contacter
+                </a>
+              </div>
+
+            </div>
           </div>
         </div>
 
-        {/* ── Photo ── */}
-        <div className='hero-photo hidden md:flex md:justify-center'>
-          <div className='relative h-[520px] w-[380px] overflow-hidden rounded-[2.5rem] border-2 border-[#3C1718]'>
+        {/* Image */}
+        <div className="relative min-h-[350px] overflow-hidden rounded-[2rem] md:min-h-[550px]">
+
+          <div
+            className="absolute inset-0 bg-cover bg-center"
+            style={{ backgroundImage: `url(${background})` }}
+          />
+
+          <div className="absolute inset-0 bg-gradient-to-r from-white/80 via-white/20 to-[#0E6B54]/20"></div>
+
+          <div className="absolute -left-24 top-8 h-[82%] w-[72%] rounded-r-[12rem] rounded-l-[8rem] border-2 border-[#139173]/30 bg-white/50 backdrop-blur-sm"></div>
+
+          <div className="absolute bottom-0 right-8 z-10 w-[72%] max-w-[420px]">
             <img
               src={imaa}
-              alt='Juliette Sounouvou'
-              className='h-full w-full object-cover object-top'
+              alt="Dr Madel Floriane Adjibayo"
+              className="w-full object-contain object-bottom"
             />
-            <div className='absolute inset-0 bg-gradient-to-t from-[#200F0D]/50 to-transparent' />
           </div>
+
+          <div className="absolute bottom-6 left-6 z-20 max-w-[230px] rounded-2xl border border-white/60 bg-white/80 p-5 backdrop-blur-md shadow-xl">
+
+            <p className="text-xs font-bold uppercase tracking-[0.25em] text-[#0E6B54]">
+              Axes de recherche
+            </p>
+
+            <p className="mt-3 text-sm leading-6 text-[#31594D]">
+              Biodiversité • Écologie aquatique • Écologie fonctionnelle •
+              Conservation des écosystèmes.
+            </p>
+
+          </div>
+
         </div>
 
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

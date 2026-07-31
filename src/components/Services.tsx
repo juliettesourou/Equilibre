@@ -1,57 +1,32 @@
-import { Monitor, Smartphone, Database, Network, Palette, Wrench } from 'lucide-react'
+import { Waves, Fish, BarChart3, FileText, Leaf, Microscope } from 'lucide-react'
 import Title from './Title'
 import { useInView } from '../hooks/useInView'
 
 const services = [
-  {
-    icon: Monitor,
-    title: 'Développement Web',
-    desc: 'Sites vitrines, applications web et plateformes sur mesure.',
-  },
-  {
-    icon: Smartphone,
-    title: 'Développement Mobile',
-    desc: "Applications Android & iOS avec Flutter.",
-  },
-  {
-    icon: Database,
-    title: 'Bases de données',
-    desc: 'Conception et gestion de bases de données robustes et sécurisées.',
-  },
-  {
-    icon: Network,
-    title: 'API & Intégrations',
-    desc: "Développement d'API RESTful et intégration de services tiers.",
-  },
-  {
-    icon: Palette,
-    title: 'UI/UX Design',
-    desc: 'Interfaces modernes, intuitives et adaptées à tous les écrans.',
-  },
-  {
-    icon: Wrench,
-    title: 'Maintenance',
-    desc: 'Maintenance, évolutions et amélioration de vos applications.',
-  },
+  { icon: Microscope, title: 'Écologie évolutive et fonctionnelle' },
+  { icon: Waves,      title: 'Écologie aquatique' },
+  { icon: Fish,       title: 'Biologie des poissons' },
+  { icon: BarChart3,  title: 'Analyse de données scientifiques' },
+  { icon: FileText,   title: 'Rédaction scientifique' },
+  { icon: Leaf,       title: 'Conservation de la biodiversité' },
 ]
 
 const Services = () => {
   const [gridRef, gridInView] = useInView()
   return (
     <section>
-      <Title title='Mes Services' eyebrow='Services' />
-      <div ref={gridRef} className='grid gap-4 sm:grid-cols-2 lg:grid-cols-3'>
+      <Title title="Domaines d'expertise" eyebrow='Expertise' />
+      <div ref={gridRef} className='grid gap-4 sm:grid-cols-2 lg:grid-cols-6'>
         {services.map((s, i) => (
           <div
             key={s.title}
             style={{ animationDelay: `${i * 80}ms` }}
-            className={`rounded-[1.5rem] border border-[#3C1718] bg-[#3C1718] p-7 transition hover:border-[#8E1F24]/60 ${gridInView ? 'anim-fade-up' : 'opacity-0'}`}
+            className={`flex min-h-[152px] flex-col items-center justify-center gap-3 rounded-[1.35rem] border border-[#E1E9E5] bg-white px-4 py-6 text-center shadow-[0_18px_35px_-28px_rgba(10,75,59,0.35)] transition hover:-translate-y-1 hover:border-[#0E6B54]/40 ${gridInView ? 'anim-fade-up' : 'opacity-0'}`}
           >
-            <div className='mb-5 flex h-12 w-12 items-center justify-center rounded-full border border-[#8E1F24]/30 bg-[#200F0D]'>
-              <s.icon className='h-5 w-5 text-[#8E1F24]' />
+            <div className='flex h-12 w-12 items-center justify-center rounded-full bg-[#EAF6F1]'>
+              <s.icon className='h-5 w-5 text-[#0E6B54]' />
             </div>
-            <h3 className='text-base font-semibold text-[#F5ECE8]'>{s.title}</h3>
-            <p className='mt-2 text-sm leading-7 text-[#AF978F]'>{s.desc}</p>
+            <h3 className='max-w-[10rem] text-sm font-semibold leading-6 text-[#163229]'>{s.title}</h3>
           </div>
         ))}
       </div>
