@@ -7,7 +7,7 @@ import shahin1 from '../assets/img/Shahin1.jpeg'
 import mejri4 from '../assets/img/Mejri4.png'
 import yovo3 from '../assets/img/yovo3.jpeg'
 import bakkari6 from '../assets/img/Lr-Bakkari6.png'
-import fishA from '../assets/img/poiss.jpeg'
+import jarique from '../assets/img/jarique.png'
 
 const publications = [
   {
@@ -88,11 +88,11 @@ const publications = [
     authors: 'Houeto M. F. A., Tazarki M., Sounouvou M., Andrialovanirina N., Mejri M., Chalh A., Quignard J. P., Trabelsi M., Mahe K.',
     year: '2026',
     desc: "Structuration environnementale de la croissance et de la forme des otolithes chez Chloroscombrus chrysurus dans des habitats côtiers contrastés.",
-    image: fishA,
+    image: jarique,
     tech: ['Chloroscombrus chrysurus', 'Croissance', 'Habitats côtiers'],
     role: 'Manuscript in preparation',
     doi: 'En préparation',
-    imageFit: 'cover',
+    imageFit: 'contain',
   },
 ]
 

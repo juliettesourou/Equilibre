@@ -1,21 +1,21 @@
-import { ArrowRight, Mail, Globe2, ScrollText } from "lucide-react";
+import { ArrowRight, Mail, Globe2, GraduationCap } from "lucide-react";
 import imaa from "../assets/img/profill.jpeg";
 import background from "../assets/img/ecosysteme.jpg";
 
 const socials = [
   {
     icon: Globe2,
-    href: "https://www.linkedin.com/",
+    href: "https://www.linkedin.com/in/houeto-floriane-224b12374",
     label: "LinkedIn",
   },
   {
-    icon: ScrollText,
-    href: "/CV_Madel_Floriane_Adjibayo.pdf",
-    label: "CV",
+    icon: GraduationCap,
+    href: "https://scholar.google.com/citations?user=4QMWA4oAAAAJ&hl=fr",
+    label: "Scholar",
   },
   {
     icon: Mail,
-    href: "mailto:floriane.adjibayo@email.com",
+    href: "mailto:houetoflori@gmail.com",
     label: "Email",
   },
 ];

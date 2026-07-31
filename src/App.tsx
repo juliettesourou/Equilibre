@@ -11,7 +11,7 @@ import Contact from './components/Contact'
 import Footer from './components/Footer'
 
 const whatsappHref =
-  'https://wa.me/2290123456789?text=Bonjour%20Dr%20Adjibayo%2C%20je%20souhaite%20vous%20contacter.'
+  'https://wa.me/22966727434?text=Bonjour%20Dr%20Adjibayo%2C%20je%20souhaite%20vous%20contacter.'
 
 function App() {
   return (

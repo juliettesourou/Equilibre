@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin, ExternalLink, Send } from 'lucide-react'
+import { Mail, Globe2, GraduationCap, Send } from 'lucide-react'
 import { useInView } from '../hooks/useInView'
 import { useState } from 'react'
 
@@ -10,10 +10,25 @@ type ContactInfo = {
 }
 
 const infos: ContactInfo[] = [
-  { icon: Mail,         label: 'Email',       value: 'adjibayofloriane@gmail.com', href: 'mailto:adjibayofloriane@gmail.com' },
-  { icon: Phone,        label: 'Téléphone',   value: '+229 01 23 45 67 89',  href: null },
-  { icon: MapPin,       label: 'Localisation',value: 'Cotonou, Bénin',      href: null },
-  { icon: ExternalLink, label: 'Profil',      value: 'Lien professionnel à renseigner', href: null },
+  { icon: Mail, label: 'Email principal', value: 'houetoflori@gmail.com', href: 'mailto:houetoflori@gmail.com' },
+  {
+    icon: Mail,
+    label: 'Email institutionnel',
+    value: 'florianemadel.houeto@etudiant-fst.utm.tn',
+    href: 'mailto:florianemadel.houeto@etudiant-fst.utm.tn',
+  },
+  {
+    icon: Globe2,
+    label: 'LinkedIn',
+    value: 'www.linkedin.com/in/houeto-floriane-224b12374',
+    href: 'https://www.linkedin.com/in/houeto-floriane-224b12374',
+  },
+  {
+    icon: GraduationCap,
+    label: 'Google Scholar',
+    value: 'Profil académique',
+    href: 'https://scholar.google.com/citations?user=4QMWA4oAAAAJ&hl=fr',
+  },
 ]
 
 const highlights = [
@@ -30,7 +45,7 @@ const Contact = () => {
     e.preventDefault()
     const body = encodeURIComponent(`Nom: ${form.nom}\nEmail: ${form.email}\n\n${form.message}`)
     const subject = encodeURIComponent(form.sujet || 'Message depuis le portfolio')
-    window.location.href = `mailto:adjibayofloriane@gmail.com?subject=${subject}&body=${body}`
+    window.location.href = `mailto:houetoflori@gmail.com?subject=${subject}&body=${body}`
   }
 
   const field = 'w-full rounded-2xl border border-white/10 bg-white/92 px-4 py-3 text-sm text-[#163229] placeholder:text-[#8A9B94] outline-none transition focus:border-[#8BD0B8] focus:bg-white focus:ring-4 focus:ring-[#8BD0B8]/15'
@@ -182,7 +197,7 @@ const Contact = () => {
                 ))}
               </div>
               <div className='mt-6 space-y-4'>
-                {infos.slice(0, 3).map(({ label, value }) => (
+                {infos.map(({ label, value }) => (
                   <div key={label} className='border-b border-white/8 pb-3 last:border-b-0 last:pb-0'>
                     <p className='text-[0.7rem] font-semibold uppercase tracking-[0.25em] text-[#9FDAC5]'>{label}</p>
                     <p className='mt-1 text-sm text-white'>{value}</p>

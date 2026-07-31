@@ -1,4 +1,4 @@
-import { Menu, X, Download, Leaf } from 'lucide-react'
+import { Menu, X, Leaf } from 'lucide-react'
 import { useState } from 'react'
 
 const links = [
@@ -40,13 +40,6 @@ const Navbar = () => {
         </nav>
 
         <div className='flex items-center gap-3'>
-          <a
-            href='#'
-            className='hidden items-center gap-2 rounded-full bg-[#0E6B54] px-5 py-2.5 text-sm font-medium text-white shadow-[0_14px_28px_-18px_rgba(14,107,84,0.85)] transition hover:bg-[#0B5643] md:inline-flex'
-          >
-            <Download className='h-4 w-4' />
-            Télécharger le CV
-          </a>
           <button
             onClick={() => setOpen((v) => !v)}
             aria-label={open ? 'Fermer le menu' : 'Ouvrir le menu'}
@@ -69,13 +62,6 @@ const Navbar = () => {
               {label}
             </a>
           ))}
-          <a
-            href='#'
-            className='mt-3 inline-flex items-center gap-2 rounded-full bg-[#0E6B54] px-4 py-2 text-sm font-medium text-white'
-          >
-            <Download className='h-4 w-4' />
-            Télécharger le CV
-          </a>
         </nav>
       )}
     </header>

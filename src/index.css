@@ -30,6 +30,12 @@
   50% { opacity: 0.62; transform: scale(1.05); }
 }
 
+@keyframes pythonSlide {
+  0%   { transform: translateX(-18px); }
+  50%  { transform: translateX(18px); }
+  100% { transform: translateX(-18px); }
+}
+
 /* ── Marquee logos ──────────────────────────────────── */
 @keyframes marquee {
   from { transform: translateX(0); }
@@ -74,6 +80,7 @@
 .hero-photo   { animation: scaleIn 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.20s both; }
 .hero-panel   { animation: floatSoft 7s ease-in-out infinite; }
 .hero-glow    { animation: glowPulse 6s ease-in-out infinite; }
+.python-slide { animation: pythonSlide 4.2s ease-in-out infinite; will-change: transform; }
 
 .glass-card {
   position: relative;
@@ -121,6 +128,7 @@
   .hero-cta,
   .hero-stats,
   .hero-photo,
+  .python-slide,
   .anim-fade-up,
   .anim-scale-in {
     animation: none !important;
