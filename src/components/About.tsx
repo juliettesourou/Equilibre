@@ -1,165 +1,73 @@
-import Title from "./Title";
-import { CheckCircle2, UserRound, Target } from "lucide-react";
-import { useInView } from "../hooks/useInView";
-import portrait from "../assets/img/qui suis-je.jpeg";
+import { CheckCircle2 } from 'lucide-react'
+import { useInView } from '../hooks/useInView'
+
+const items = [
+  "EQUILIBRE, c'est bien plus qu'une agence de communication digitale.",
+  "C'est une equipe unie, portee par un concept fort et une vision claire de l'accompagnement digital.",
+  "Nous agissons comme un partenaire de confiance pour aider chaque client a transformer ses idees en projets ambitieux, coherents et performants.",
+]
 
 const strengths = [
-  "Je suis Dr Houeto Madel Floriane, Docteure en Sciences biologiques, spécialisée en écologie évolutive et fonctionnelle, avec un intérêt particulier pour les organismes aquatiques.",
-
-  "Mes recherches portent sur la compréhension des mécanismes qui régissent la vie des espèces aquatiques, leur développement, leur adaptation et leurs interactions avec les changements environnementaux.",
-
-  "Mon expertise associe la recherche scientifique, l'analyse des données, l'écologie appliquée, la biologie des organismes et la conservation de la biodiversité."
-];
-
-const goals = [
-  "Mettre mes compétences scientifiques au service de projets de recherche en écologie, biodiversité et conservation des milieux naturels.",
-
-  "Contribuer à des études environnementales, des programmes de suivi écologique, des évaluations d'impact environnemental et des actions de conservation de la biodiversité.",
-
-  "Développer des collaborations scientifiques nationales et internationales autour de l'écologie aquatique, de la gestion durable des écosystèmes et de l'analyse des données environnementales."
-];
-
-const journey = [
-  "Mon parcours universitaire est consacré à l'écologie évolutive et fonctionnelle, une discipline qui étudie les relations entre les organismes, leurs fonctions biologiques, leur évolution et leur environnement.",
-
-  "J'ai développé mes compétences scientifiques au sein du Laboratoire de Recherche en Écologie, Biologie et Physiologie des Organismes, où mes travaux se sont orientés vers l'écologie aquatique et la biologie des poissons.",
-
-  "Mes recherches doctorales portent sur l'utilisation des otolithes comme outils biologiques permettant d'étudier la croissance, la morphologie, la microchimie et la structuration des populations de poissons.",
-
-  "Au cours de mes travaux, j'ai étudié plusieurs espèces provenant de milieux lagunaires, lacustres et marins en utilisant des approches morphométriques, statistiques et écologiques pour mieux comprendre leur dynamique et leur adaptation."
-];
+  { label: 'Communication 360°', value: '95%' },
+  { label: 'Marketing numerique', value: '90%' },
+  { label: 'Technologies web', value: '85%' },
+]
 
 const About = () => {
-  const [gridRef, gridInView] = useInView();
+  const [ref, inView] = useInView()
 
   return (
-    <section className="rounded-[2rem] bg-white p-6 shadow-[0_28px_70px_-52px_rgba(12,77,59,0.48)] md:p-10">
-      <div className="section-shell w-full !max-w-none">
-        <Title
-          title="À propos"
-          eyebrow="À propos"
-          subtitle="Découvrez mon parcours scientifique, mes domaines d'expertise et mes objectifs en écologie aquatique et en conservation de la biodiversité."
-        />
-
-        <div ref={gridRef} className="space-y-6">
-
-          {/* Qui suis-je */}
-          <div
-            style={{ animationDelay: "0ms" }}
-            className={`glass-card elegant-card rounded-[1.75rem] border border-[#E2F0EA] bg-[#F9FCFB] p-8 ${
-              gridInView ? "anim-fade-up" : "opacity-0"
-            }`}
-          >
-            <div className="mb-6 flex items-center gap-3">
-              <span className="flex h-11 w-11 items-center justify-center rounded-full bg-[#E6F5EF] text-[#0E6B54]">
-                <UserRound className="h-5 w-5" />
-              </span>
-
-              <h3 className="text-xl font-semibold text-[#163229]">
-                Qui suis-je ?
-              </h3>
-            </div>
-
-            <div className="grid gap-8 lg:grid-cols-[1.08fr_0.92fr] lg:items-stretch">
-              <div className="relative min-h-[520px] overflow-hidden rounded-[1.75rem] border border-[#D7EAE2] bg-white shadow-[0_30px_60px_-40px_rgba(14,107,84,0.42)]">
-                <div className="absolute inset-0 bg-gradient-to-br from-[#F6FBF9] via-transparent to-[#E4F2EC]/50" />
-                <img
-                  src={portrait}
-                  alt="Portrait professionnel de Dr Houeto Madel Floriane"
-                  className="h-full w-full object-cover object-top"
-                />
-                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#0F3128]/88 via-[#0F3128]/26 to-transparent px-6 pb-6 pt-20 text-white">
-                  <p className="text-[0.72rem] font-semibold uppercase tracking-[0.3em] text-[#D9EEE6]">
-                    Profil professionnel
-                  </p>
-                  <p className="mt-2 text-xl font-semibold leading-snug">
-                    Dr Houeto Madel Floriane
-                  </p>
-                  <p className="mt-2 max-w-sm text-sm leading-6 text-[#E4F3ED]">
-                    Spécialiste en écologie évolutive et fonctionnelle, avec
-                    une expertise dédiée aux milieux aquatiques et à la
-                    biodiversité.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex flex-col justify-start pt-3 lg:pt-1">
-                <div className="mb-4 flex flex-wrap gap-2">
-                  <span className="rounded-full bg-[#EAF6F1] px-3 py-1 text-xs font-semibold text-[#0E6B54]">
-                    Docteure en sciences biologiques
-                  </span>
-                  <span className="rounded-full bg-[#F1F8F5] px-3 py-1 text-xs font-semibold text-[#31594D]">
-                    Recherche appliquée
-                  </span>
-                </div>
-
-                <div className="space-y-4 text-base leading-8 text-[#4A645B]">
-                  {strengths.map((item) => (
-                    <p key={item}>{item}</p>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Objectifs */}
-          <div
-            style={{ animationDelay: "130ms" }}
-            className={`glass-card elegant-card rounded-[1.75rem] border border-[#E2F0EA] bg-[#F9FCFB] p-8 ${
-              gridInView ? "anim-fade-up" : "opacity-0"
-            }`}
-          >
-            <div className="mb-6 flex items-center gap-3">
-              <span className="flex h-11 w-11 items-center justify-center rounded-full bg-[#E6F5EF] text-[#0E6B54]">
-                <Target className="h-5 w-5" />
-              </span>
-
-              <h3 className="text-xl font-semibold text-[#163229]">
-                Mes objectifs
-              </h3>
-            </div>
-
-            <ul className="space-y-5">
-              {goals.map((goal) => (
-                <li
-                  key={goal}
-                  className="flex items-start gap-3 text-sm leading-7 text-[#4A645B] md:text-[0.98rem]"
-                >
-                  <CheckCircle2 className="mt-1 h-5 w-5 shrink-0 text-[#0E6B54]" />
-                  <span>{goal}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
+    <section
+      ref={ref}
+      className={`eq-card rounded-[1.75rem] p-6 shadow-[0_24px_60px_-40px_rgba(14,83,183,0.18)] md:p-8 ${
+        inView ? 'anim-fade-up' : 'opacity-0'
+      }`}
+    >
+      <p className='text-xs font-semibold uppercase tracking-[0.28em] text-[#E50012]'>A propos</p>
+      <div className='mt-5 grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-start'>
+        <div>
+          <h2 className='max-w-[14ch] text-3xl font-semibold leading-[1.1] text-[#000000] md:text-4xl'>
+            Une equipe unie, un concept fort, vous avez EQUILIBRE.
+          </h2>
+          <p className='mt-4 max-w-md text-sm leading-7 text-[#4B5563]'>
+            EQUILIBRE accompagne ses clients avec une approche humaine, strategique
+            et technique pour construire une presence digitale forte et durable.
+          </p>
         </div>
+        <div className='grid gap-4'>
+          {items.map((item) => (
+            <div
+              key={item}
+              className='eq-outline-card rounded-[1.3rem] px-5 py-5 text-sm leading-7 text-[#4B5563] transition hover:border-[#0E53B7]/24 hover:bg-[#f8fbff]'
+            >
+              <div className='flex items-start gap-3'>
+                <CheckCircle2 className='mt-1 h-4 w-4 shrink-0 text-[#0E53B7]' />
+                <p>{item}</p>
+              </div>
+            </div>
+          ))}
 
-        {/* Parcours */}
-        <div
-          style={{ animationDelay: "220ms" }}
-          className={`glass-card elegant-card mt-6 rounded-[1.75rem] border border-[#E2F0EA] bg-[linear-gradient(180deg,#ffffff_0%,#f6fbf9_100%)] p-8 shadow-[0_20px_45px_-34px_rgba(12,80,61,0.2)] ${
-            gridInView ? "anim-fade-up" : "opacity-0"
-          }`}
-        >
-          <h3 className="text-xl font-semibold text-[#163229]">
-            Mon parcours scientifique
-          </h3>
-
-          <div className="mt-5 grid gap-4 md:grid-cols-2">
-            {journey.map((item) => (
+          <div className='grid gap-4 pt-2 md:grid-cols-3'>
+            {strengths.map((item) => (
               <div
-                key={item}
-                className="rounded-[1.25rem] border border-[#E5F1EC] bg-white/90 p-5 text-sm leading-7 text-[#4A645B] transition duration-300 hover:border-[#CFE6DC] hover:bg-white"
+                key={item.label}
+                className='rounded-[1.3rem] border border-[#0E53B7]/12 bg-[#f9fbff] px-5 py-5 backdrop-blur-md'
               >
-                {item}
+                <p className='text-sm font-medium text-[#4B5563]'>{item.label}</p>
+                <p className='mt-3 text-3xl font-semibold text-[#000000]'>{item.value}</p>
+                <div className='mt-4 h-2 w-full rounded-full bg-[#dbeafe]'>
+                  <div
+                    className='h-2 rounded-full bg-[linear-gradient(90deg,#0E53B7_0%,#1765D4_72%,#E50012_100%)]'
+                    style={{ width: item.value }}
+                  />
+                </div>
               </div>
             ))}
           </div>
         </div>
-
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default About;
+export default About

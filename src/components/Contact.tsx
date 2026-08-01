@@ -1,6 +1,7 @@
-import { Mail, Globe2, GraduationCap, Send } from 'lucide-react'
+import { Mail, MapPin, Phone, Send } from 'lucide-react'
 import { useInView } from '../hooks/useInView'
 import { useState } from 'react'
+import logoImage from '../assets/img/logo.png'
 
 type ContactInfo = {
   icon: typeof Mail
@@ -9,32 +10,17 @@ type ContactInfo = {
   href: string | null
 }
 
-const infos: ContactInfo[] = [
-  { icon: Mail, label: 'Email principal', value: 'houetoflori@gmail.com', href: 'mailto:houetoflori@gmail.com' },
-  {
-    icon: Mail,
-    label: 'Email institutionnel',
-    value: 'florianemadel.houeto@etudiant-fst.utm.tn',
-    href: 'mailto:florianemadel.houeto@etudiant-fst.utm.tn',
-  },
-  {
-    icon: Globe2,
-    label: 'LinkedIn',
-    value: 'www.linkedin.com/in/houeto-floriane-224b12374',
-    href: 'https://www.linkedin.com/in/houeto-floriane-224b12374',
-  },
-  {
-    icon: GraduationCap,
-    label: 'Google Scholar',
-    value: 'Profil académique',
-    href: 'https://scholar.google.com/citations?user=4QMWA4oAAAAJ&hl=fr',
-  },
-]
+const whatsappHref = 'https://wa.me/22954345477'
 
-const highlights = [
-  'Études environnementales',
-  'Suivi écologique',
-  'Conservation',
+const infos: ContactInfo[] = [
+  { icon: Phone, label: 'Telephone', value: '(+229) 54 34 54 77', href: 'tel:+22954345477' },
+  { icon: Mail, label: 'Email', value: 'contact@equilibre.media', href: 'mailto:contact@equilibre.media' },
+  {
+    icon: MapPin,
+    label: 'Adresse',
+    value: "Benin, Abomey-Calavi, Rue Office Notarial en face de l'UAC.",
+    href: null,
+  },
 ]
 
 const Contact = () => {
@@ -43,173 +29,132 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    const body = encodeURIComponent(`Nom: ${form.nom}\nEmail: ${form.email}\n\n${form.message}`)
-    const subject = encodeURIComponent(form.sujet || 'Message depuis le portfolio')
-    window.location.href = `mailto:houetoflori@gmail.com?subject=${subject}&body=${body}`
+    const text = encodeURIComponent(
+      `Bonjour Equilibre,\n\nNom: ${form.nom}\nEmail: ${form.email}\nSujet: ${form.sujet}\n\nMessage:\n${form.message}`
+    )
+    window.open(`${whatsappHref}?text=${text}`, '_blank', 'noreferrer')
   }
 
-  const field = 'w-full rounded-2xl border border-white/10 bg-white/92 px-4 py-3 text-sm text-[#163229] placeholder:text-[#8A9B94] outline-none transition focus:border-[#8BD0B8] focus:bg-white focus:ring-4 focus:ring-[#8BD0B8]/15'
+  const field =
+    'w-full rounded-2xl border border-[#0E53B7]/14 bg-white px-4 py-3 text-sm text-[#111827] placeholder:text-[#9CA3AF] outline-none transition focus:border-[#0E53B7] focus:bg-[#f9fbff] focus:ring-4 focus:ring-[#0E53B7]/10'
 
   return (
-    <section id='contact' className='relative overflow-hidden bg-[#0B4B3D] py-16 text-white'>
-      <div className='absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/35 to-transparent' />
-      <div className='absolute left-[-6rem] top-10 h-52 w-52 rounded-full bg-[#35B18C]/12 blur-3xl' />
-      <div className='absolute bottom-[-5rem] right-[-2rem] h-64 w-64 rounded-full bg-[#8BD0B8]/10 blur-3xl' />
-      <div className='section-shell'>
-        <div className='mb-10 grid gap-3 md:grid-cols-[0.9fr_1.1fr_0.8fr] md:items-end'>
-          <div>
-            <p className='text-sm font-semibold uppercase tracking-[0.28em] text-[#9FDAC5]'>Contact</p>
-            <h2 className='mt-3 text-3xl font-semibold text-white'>Contactez-moi</h2>
-            <div className='mt-5 flex flex-wrap gap-2'>
-              {highlights.map((item) => (
-                <span
-                  key={item}
-                  className='rounded-full border border-white/14 bg-white/8 px-3 py-1 text-xs font-medium text-[#D4EEE6] backdrop-blur-sm'
-                >
-                  {item}
-                </span>
-              ))}
-            </div>
-          </div>
-          <p className='max-w-xl text-sm leading-7 text-[#C7E6DB]'>
-            Je souhaite contribuer à des études environnementales, à des projets de recherche, à des programmes de suivi écologique et à des actions de conservation.
-          </p>
-          <div className='text-sm text-[#D4EEE6]'>
-            Retrouvons-nous autour de projets liés à l'environnement et à la biodiversité.
-          </div>
-        </div>
-
-        <div ref={gridRef} className='grid gap-8 md:grid-cols-[0.95fr_1.2fr_0.85fr]'>
-
+    <section id='contact' className='relative overflow-hidden border-t border-[#0E53B7]/10 bg-[linear-gradient(180deg,#ffffff_0%,#f7faff_100%)] py-16 text-[#000000]'>
+      <div className='absolute inset-0 bg-[radial-gradient(circle_at_15%_10%,rgba(14,83,183,0.12),transparent_20%),radial-gradient(circle_at_90%_70%,rgba(229,0,18,0.06),transparent_18%)]' />
+      <div className='section-shell relative'>
+        <div ref={gridRef} className='grid gap-8 xl:grid-cols-[1fr_0.95fr] xl:gap-10'>
           <div
             style={{ animationDelay: '0ms' }}
-            className={`space-y-4 ${gridInView ? 'anim-fade-up' : 'opacity-0'}`}
+            className={`${gridInView ? 'anim-fade-up' : 'opacity-0'}`}
           >
-            {infos.map(({ icon: Icon, label, value, href }) => {
-              const inner = (
-                <>
-                  <div className='flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-[#E1E9E5] bg-[#F5FAF8]'>
-                    <Icon className='h-4 w-4 text-[#0E6B54]' />
+            <div className='flex items-center gap-3'>
+              <img src={logoImage} alt='Logo Equilibre Agency' className='h-14 w-auto object-contain' />
+              <div>
+                <p className='text-[1.05rem] font-semibold uppercase tracking-[0.08em] text-[#000000]'>
+                  Equilibre
+                </p>
+                <p className='max-w-md text-sm leading-7 text-[#4B5563]'>
+                  Nous concevons des solutions numeriques sur mesure pour aider
+                  votre entreprise a gagner en efficacite et en visibilite.
+                </p>
+              </div>
+            </div>
+
+            <div className='mt-8 grid gap-4 sm:grid-cols-2'>
+              {infos.map(({ icon: Icon, label, value, href }) => {
+                const content = (
+                  <div className='eq-outline-card rounded-[1.35rem] p-5 transition hover:border-[#0E53B7]/24 hover:bg-[#f8fbff]'>
+                    <div className='flex items-start gap-3'>
+                      <span className='mt-1 flex h-10 w-10 items-center justify-center rounded-full bg-[#0E53B7]/10 text-[#0E53B7]'>
+                        <Icon className='h-4 w-4' />
+                      </span>
+                      <div>
+                        <p className='text-[0.72rem] font-semibold uppercase tracking-[0.24em] text-[#E50012]'>
+                          {label}
+                        </p>
+                        <p className='mt-2 text-sm leading-7 text-[#4B5563]'>{value}</p>
+                      </div>
+                    </div>
                   </div>
-                  <div>
-                    <p className='text-xs uppercase tracking-[0.25em] text-[#9FDAC5]'>{label}</p>
-                    <p className='mt-1 text-sm text-white'>{value}</p>
-                  </div>
-                </>
-              )
-              return href ? (
-                <a
-                  key={label}
-                  href={href}
-                  target={typeof href === 'string' && href.startsWith('http') ? '_blank' : undefined}
-                  rel={typeof href === 'string' && href.startsWith('http') ? 'noreferrer' : undefined}
-                  className='glass-card elegant-card flex items-center gap-4 rounded-[1.35rem] border border-white/10 bg-white/6 p-5 backdrop-blur-sm hover:border-white/30'
-                >
-                  {inner}
-                </a>
-              ) : (
-                <div key={label} className='glass-card elegant-card flex items-center gap-4 rounded-[1.35rem] border border-white/10 bg-white/6 p-5 backdrop-blur-sm'>
-                  {inner}
-                </div>
-              )
-            })}
+                )
+                return href ? (
+                  <a key={label} href={href} className='block'>
+                    {content}
+                  </a>
+                ) : (
+                  <div key={label}>{content}</div>
+                )
+              })}
+            </div>
           </div>
 
           <form
             onSubmit={handleSubmit}
-            style={{ animationDelay: '130ms' }}
-            className={`glass-card rounded-[1.85rem] border border-white/10 bg-white/7 p-8 shadow-[0_24px_50px_-36px_rgba(0,0,0,0.5)] backdrop-blur-md ${gridInView ? 'anim-fade-up' : 'opacity-0'}`}
+            style={{ animationDelay: '140ms' }}
+            className={`eq-card rounded-[1.9rem] p-5 shadow-[0_24px_50px_-38px_rgba(14,83,183,0.2)] sm:p-6 xl:p-8 ${
+              gridInView ? 'anim-fade-up' : 'opacity-0'
+            }`}
           >
-            <div className='mb-6 flex items-center justify-between gap-4'>
+            <div className='mb-6 flex items-start justify-between gap-4'>
               <div>
-                <h3 className='text-lg font-semibold text-white'>Envoyer un message</h3>
-                <p className='mt-1 text-sm text-[#C7E6DB]'>Une opportunité, une collaboration ou une mission scientifique.</p>
+                <p className='text-xs font-semibold uppercase tracking-[0.3em] text-[#E50012]'>
+                  Contact
+                </p>
+                <h3 className='mt-2 text-2xl font-semibold text-[#000000]'>Contactez-nous pour toute question.</h3>
+                <p className='mt-2 text-sm leading-7 text-[#4B5563]'>
+                  Remplissez le formulaire pour nous envoyer votre demande ou votre question.
+                </p>
               </div>
-              <span className='rounded-full border border-white/12 bg-white/10 px-3 py-1 text-xs font-medium text-[#D9F1E8]'>
-                Réponse par email
+              <span className='rounded-full bg-[#E50012] px-3 py-1 text-xs font-semibold text-white'>
+                Reponse rapide
               </span>
             </div>
+
             <div className='grid gap-4 sm:grid-cols-2'>
-              <div>
-                <label className='mb-2 block text-xs text-[#B8DDD1]'>Nom</label>
-                <input
-                  type='text'
-                  placeholder='Votre nom'
-                  value={form.nom}
-                  onChange={(e) => setForm({ ...form, nom: e.target.value })}
-                  className={field}
-                />
-              </div>
-              <div>
-                <label className='mb-2 block text-xs text-[#B8DDD1]'>Email</label>
-                <input
-                  type='email'
-                  placeholder='votre@email.com'
-                  value={form.email}
-                  onChange={(e) => setForm({ ...form, email: e.target.value })}
-                  className={field}
-                />
-              </div>
-            </div>
-
-            <div className='mt-4'>
-              <label className='mb-2 block text-xs text-[#B8DDD1]'>Sujet</label>
               <input
-                type='text'
-                placeholder='Objet du message'
-                value={form.sujet}
-                onChange={(e) => setForm({ ...form, sujet: e.target.value })}
+              type='text'
+              placeholder='Votre nom'
+                value={form.nom}
+                onChange={(e) => setForm({ ...form, nom: e.target.value })}
                 className={field}
+                required
+              />
+              <input
+              type='email'
+              placeholder='Votre adresse e-mail'
+                value={form.email}
+                onChange={(e) => setForm({ ...form, email: e.target.value })}
+                className={field}
+                required
               />
             </div>
 
-            <div className='mt-4'>
-              <label className='mb-2 block text-xs text-[#B8DDD1]'>Message</label>
-              <textarea
-                rows={5}
-                placeholder='Votre message...'
-                value={form.message}
-                onChange={(e) => setForm({ ...form, message: e.target.value })}
-                className={`${field} resize-none`}
-              />
-            </div>
+            <input
+              type='text'
+              placeholder='Objet du message'
+              value={form.sujet}
+              onChange={(e) => setForm({ ...form, sujet: e.target.value })}
+              className={`${field} mt-4`}
+              required
+            />
+
+            <textarea
+              rows={6}
+              placeholder='Message'
+              value={form.message}
+              onChange={(e) => setForm({ ...form, message: e.target.value })}
+              className={`${field} mt-4 resize-none`}
+              required
+            />
 
             <button
               type='submit'
-              className='mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-white py-3 text-sm font-medium text-[#0E6B54] shadow-[0_16px_32px_-24px_rgba(255,255,255,0.55)] transition hover:-translate-y-0.5 hover:bg-[#EAF6F1]'
+              className='eq-button-primary mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full py-3.5 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:brightness-110'
             >
               <Send className='h-4 w-4' />
-              Envoyer le message
+              Send Message
             </button>
           </form>
-
-          <div
-            style={{ animationDelay: '220ms' }}
-            className={`glass-card elegant-card flex flex-col justify-between rounded-[1.85rem] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.11)_0%,rgba(255,255,255,0.05)_100%)] p-7 backdrop-blur-sm ${gridInView ? 'anim-fade-up' : 'opacity-0'}`}
-          >
-            <div>
-              <h3 className='text-xl font-semibold text-white'>Retrouvez-moi</h3>
-              <div className='mt-5 flex gap-3'>
-                {infos.slice(0, 3).map(({ icon: Icon, label }) => (
-                  <div key={label} className='flex h-11 w-11 items-center justify-center rounded-2xl border border-white/10 bg-white/10 text-white'>
-                    <Icon className='h-4 w-4' />
-                  </div>
-                ))}
-              </div>
-              <div className='mt-6 space-y-4'>
-                {infos.map(({ label, value }) => (
-                  <div key={label} className='border-b border-white/8 pb-3 last:border-b-0 last:pb-0'>
-                    <p className='text-[0.7rem] font-semibold uppercase tracking-[0.25em] text-[#9FDAC5]'>{label}</p>
-                    <p className='mt-1 text-sm text-white'>{value}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <p className='mt-8 text-sm leading-7 text-[#D4EEE6]'>
-              La compréhension du vivant est une clé pour préserver notre environnement.
-            </p>
-          </div>
-
         </div>
       </div>
     </section>
