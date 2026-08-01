@@ -4,9 +4,9 @@ import logoImage from '../assets/img/logo.png'
 
 const links = [
   { href: '#home', label: 'Accueil' },
-  { href: '#about', label: 'A propos' },
+  { href: '#about', label: 'À propos' },
   { href: '#services', label: 'Services' },
-  { href: '#projects', label: 'Realisations' },
+  { href: '#projects', label: 'Réalisations' },
   { href: '#contact', label: 'Contact' },
 ]
 
@@ -23,7 +23,7 @@ const Navbar = () => {
               Equilibre
             </span>
             <span className='block text-[0.68rem] text-[#4B5563] md:text-[0.76rem]'>
-              Agency
+              Agence
             </span>
           </span>
         </a>

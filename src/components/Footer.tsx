@@ -16,12 +16,12 @@ const Footer = () => (
             <img src={logoImage} alt='Logo Equilibre Agency' className='h-12 w-auto object-contain' />
             <div>
               <p className='text-[1.05rem] font-semibold uppercase tracking-[0.08em] text-[#000000]'>Equilibre</p>
-              <p className='text-xs text-[#E50012]'>Agency</p>
+              <p className='text-xs text-[#E50012]'>Agence</p>
             </div>
           </div>
           <p className='mt-4 max-w-xs leading-7'>
-            Nous concevons des solutions numeriques sur mesure pour aider votre
-            entreprise a gagner en efficacite, en clarte et en visibilite.
+            Nous concevons des solutions numériques sur mesure pour aider votre
+            entreprise à gagner en efficacité, en clarté et en visibilité.
           </p>
           <div className='mt-5 flex flex-wrap gap-2'>
             {socials.map((item) => (
@@ -53,8 +53,8 @@ const Footer = () => (
           <div className='mt-4 space-y-2'>
             <p>API</p>
             <p>Automatisation</p>
-            <p>Visibilite numerique</p>
-            <p>Developpement web</p>
+            <p>Visibilité numérique</p>
+            <p>Développement web</p>
           </div>
         </div>
 
@@ -63,16 +63,16 @@ const Footer = () => (
           <div className='mt-4 space-y-2'>
             <p>(+229) 54 34 54 77</p>
             <p>contact@equilibre.media</p>
-            <p>Benin, Abomey-Calavi</p>
+            <p>Bénin, Abomey-Calavi</p>
           </div>
         </div>
       </div>
 
       <div className='mt-8 flex flex-col gap-3 border-t border-[#0E53B7]/10 pt-5 text-xs text-[#6B7280] sm:flex-row sm:flex-wrap sm:items-center sm:justify-between'>
-        <p>© 2026 Equilibre. Tous droits reserves.</p>
+        <p>© 2026 Equilibre. Tous droits réservés.</p>
         <div className='flex flex-wrap gap-4 sm:gap-6'>
-          <span>Mentions legales</span>
-          <span>Politique de confidentialite</span>
+          <span>Mentions légales</span>
+          <span>Politique de confidentialité</span>
         </div>
       </div>
     </div>

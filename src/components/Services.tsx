@@ -13,12 +13,12 @@ import { useInView } from '../hooks/useInView'
 const services = [
   {
     icon: BarChart3,
-    title: 'Strategie digitale',
+    title: 'Stratégie digitale',
     description:
-      "Nous accompagnons les entreprises dans la mise en place d'une strategie numerique claire pour renforcer leur presence en ligne et leur positionnement.",
+      "Nous accompagnons les entreprises dans la mise en place d'une stratégie numérique claire pour renforcer leur présence en ligne et leur positionnement.",
     points: [
-      'Augmenter la visibilite sur Internet',
-      'Developper la notoriete de la marque',
+      'Augmenter la visibilité sur Internet',
+      'Développer la notoriété de la marque',
       'Analyser les performances digitales',
     ],
   },
@@ -26,29 +26,29 @@ const services = [
     icon: Share2,
     title: 'Communication digitale',
     description:
-      "Nous concevons une communication a 360 degres pour garantir une presence coherente sur l'ensemble des canaux digitaux.",
+      "Nous concevons une communication à 360 degrés pour garantir une présence cohérente sur l'ensemble des canaux digitaux.",
     points: [
-      'Strategie de communication adaptee',
-      'Presence coherente sur les canaux',
-      'Visibilite de marque renforcee',
+      'Stratégie de communication adaptée',
+      'Présence cohérente sur les canaux',
+      'Visibilité de marque renforcée',
     ],
   },
   {
     icon: Megaphone,
     title: 'Social Ads',
     description:
-      "Nous creons, pilotons et optimisons les campagnes publicitaires sur les reseaux sociaux et les medias numeriques.",
+      "Nous créons, pilotons et optimisons les campagnes publicitaires sur les réseaux sociaux et les médias numériques.",
     points: [
       'Atteindre la bonne audience',
-      'Reduire le cout des campagnes',
+      'Réduire le coût des campagnes',
       'Maximiser le retour sur investissement',
     ],
   },
   {
     icon: Code2,
-    title: 'Developpement web',
+    title: 'Développement web',
     description:
-      'Nous developpons des solutions numeriques sur mesure avec des technologies modernes selon les besoins des clients.',
+      'Nous développons des solutions numériques sur mesure avec des technologies modernes, selon les besoins des clients.',
     points: [
       'Sites web et applications web',
       'Applications mobiles et logiciels',
@@ -57,12 +57,12 @@ const services = [
   },
   {
     icon: Brush,
-    title: 'Creation de contenu',
+    title: 'Création de contenu',
     description:
-      "Nous accompagnons les entreprises dans la construction d'une identite visuelle forte, creative et memorable.",
+      "Nous accompagnons les entreprises dans la construction d'une identité visuelle forte, créative et mémorable.",
     points: [
       'Logos et chartes graphiques',
-      'Visuels et contenus editoriaux',
+      'Visuels et contenus éditoriaux',
       'Image de marque originale',
     ],
   },
@@ -70,10 +70,10 @@ const services = [
     icon: Network,
     title: 'Externalisation de services',
     description:
-      "Nous mettons a disposition notre expertise pour prendre en charge certaines missions techniques a cout competitif.",
+      "Nous mettons à disposition notre expertise pour prendre en charge certaines missions techniques à coût compétitif.",
     points: [
-      'Sous-traitance de missions ciblees',
-      'Ressources et expertise dediees',
+      'Sous-traitance de missions ciblées',
+      'Ressources et expertise dédiées',
       'Prestations fiables et rentables',
     ],
   },
@@ -85,9 +85,9 @@ const Services = () => {
   return (
     <section>
       <Title
-        title='Des expertises complementaires pour des resultats concrets'
+        title='Des expertises complémentaires pour des résultats concrets'
         eyebrow='Nos services'
-        subtitle="De la strategie a la production, Equilibre accompagne les entreprises avec des services complementaires pour accelerer leur croissance digitale."
+        subtitle="De la stratégie à la production, Equilibre accompagne les entreprises avec des services complémentaires pour accélérer leur croissance digitale."
       />
 
       <div ref={gridRef} className='grid gap-5 md:grid-cols-2 xl:grid-cols-3'>
@@ -95,22 +95,22 @@ const Services = () => {
           <article
             key={service.title}
             style={{ animationDelay: `${i * 90}ms` }}
-            className={`glass-card elegant-card eq-card flex min-h-[290px] flex-col rounded-[1.7rem] p-5 md:min-h-[320px] md:p-7 ${
+            className={`glass-card elegant-card eq-card min-w-0 overflow-hidden flex min-h-[290px] flex-col rounded-[1.7rem] p-5 md:min-h-[320px] md:p-7 ${
               gridInView ? 'anim-fade-up' : 'opacity-0'
             }`}
           >
             <div className='flex h-16 w-16 items-center justify-center rounded-[1.2rem] bg-[linear-gradient(135deg,#0E53B7_0%,#1765D4_72%,#E50012_100%)] text-white shadow-[0_18px_40px_-25px_rgba(14,83,183,0.35)]'>
               <service.icon className='h-6 w-6' />
             </div>
-            <h3 className='mt-5 max-w-[16rem] text-lg font-semibold leading-7 text-[#000000] md:mt-6 md:text-[1.55rem]'>
+            <h3 className='mt-5 max-w-full text-[1.35rem] font-semibold leading-[1.2] text-[#000000] break-words md:mt-6 md:max-w-[16rem] md:text-[1.55rem]'>
               {service.title}
             </h3>
-            <p className='mt-4 text-sm leading-7 text-[#4B5563]'>{service.description}</p>
+            <p className='mt-4 break-words text-sm leading-7 text-[#4B5563]'>{service.description}</p>
             <div className='mt-5 space-y-2'>
               {service.points.map((point, pointIndex) => (
-                <div key={point} className='flex items-start gap-2 text-sm leading-6 text-[#4B5563]'>
+                <div key={point} className='flex min-w-0 items-start gap-2 text-sm leading-6 text-[#4B5563]'>
                   <span className={`mt-2 h-1.5 w-1.5 rounded-full ${pointIndex === 1 ? 'bg-[#E50012]' : 'bg-[#0E53B7]'}`} />
-                  <span>{point}</span>
+                  <span className='break-words'>{point}</span>
                 </div>
               ))}
             </div>

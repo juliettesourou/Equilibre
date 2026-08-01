@@ -3,10 +3,10 @@ import { useInView } from '../hooks/useInView'
 import { BriefcaseBusiness, CalendarRange, Smile, Users } from 'lucide-react'
 
 const metrics = [
-  { icon: CalendarRange, value: '3', label: "Annees d'experience" },
-  { icon: Users, value: '10', label: "Membres de l'equipe" },
+  { icon: CalendarRange, value: '3', label: "Années d'expérience" },
+  { icon: Users, value: '10', label: "Membres de l'équipe" },
   { icon: Smile, value: '100%', label: 'Clients satisfaits' },
-  { icon: BriefcaseBusiness, value: '47', label: 'Projets livres' },
+  { icon: BriefcaseBusiness, value: '47', label: 'Projets livrés' },
 ]
 
 const Experiences = () => {
@@ -42,7 +42,7 @@ const Experiences = () => {
         <Title
           title='Indicateurs Equilibre'
           eyebrow='Confiance'
-          subtitle='Indicateurs de confiance et de support.'
+          subtitle='Indicateurs de confiance et d’accompagnement.'
         />
       </div>
     </section>

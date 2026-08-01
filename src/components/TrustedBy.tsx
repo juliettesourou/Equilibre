@@ -8,7 +8,7 @@ import crystalAgriLogo from '../assets/img/Logo CRYSTAL AGRI BUSINESS.png'
 const logos = [
   { src: serviceFacileLogo, alt: 'Logo Service Facile' },
   { src: soPlugLogo, alt: 'Logo SoPlug' },
-  { src: raljmLogo, alt: 'Logo Residence Autonomie Les Jardins du Marais' },
+  { src: raljmLogo, alt: 'Logo Résidence Autonomie Les Jardins du Marais' },
   { src: crystalAgriLogo, alt: 'Logo Crystal Agri Business' },
 ]
 
@@ -22,7 +22,7 @@ const TrustedBy = () => {
       <Title
         title='Ils nous font confiance'
         eyebrow='Confiance'
-        subtitle="Des entreprises nous confient leurs projets digitaux pour structurer leur presence, developper leurs outils et faire grandir leur activite."
+        subtitle="Des entreprises nous confient leurs projets digitaux pour structurer leur présence, développer leurs outils et faire grandir leur activité."
       />
 
       <div

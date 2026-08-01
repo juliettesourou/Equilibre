@@ -10,30 +10,30 @@ import homeImage from '../assets/img/home.jpeg'
 import { useInView } from '../hooks/useInView'
 
 const miniStats = [
-  { value: 'API', label: 'integrations fluides' },
-  { value: 'Auto', label: 'processus simplifies' },
-  { value: 'Web', label: 'presence renforcee' },
+  { value: 'API', label: 'intégrations fluides' },
+  { value: 'Auto', label: 'processus simplifiés' },
+  { value: 'Web', label: 'présence renforcée' },
 ]
 
 const heroCards = [
   {
     icon: Code2,
     title: 'API',
-    text: 'Connectez vos applications en toute simplicite.',
+    text: 'Connectez vos applications en toute simplicité.',
     color: 'bg-[#0E53B7]',
     className: 'lg:absolute lg:left-0 lg:top-14',
   },
   {
     icon: Cog,
     title: 'Automatisation',
-    text: 'Automatisez vos taches repetitives et gagnez du temps.',
+    text: 'Automatisez vos tâches répétitives et gagnez du temps.',
     color: 'bg-[#E50012]',
     className: 'lg:absolute lg:right-0 lg:top-8',
   },
   {
     icon: LineChart,
-    title: 'Visibilite numerique',
-    text: 'Attirez plus de clients et developpez votre presence en ligne.',
+    title: 'Visibilité numérique',
+    text: 'Attirez plus de clients et développez votre présence en ligne.',
     color: 'bg-[#0B47A1]',
     className: 'sm:col-span-2 lg:absolute lg:bottom-12 lg:right-10 lg:col-span-1',
   },
@@ -56,16 +56,16 @@ const Home = () => {
           </div>
 
           <h1 className='hero-title mt-6 max-w-[12ch] text-[2.35rem] font-bold leading-[1.04] text-[#000000] sm:text-[3.1rem] lg:max-w-[11.5ch] lg:text-[4.15rem]'>
-            Des solutions numeriques
+            Des solutions numériques
             <br />
-            equilibrees pour faire
+            équilibrées pour faire
             <br />
-            <span className='eq-accent-text'>evoluer</span> votre entreprise
+            <span className='eq-accent-text'>évoluer</span> votre entreprise
           </h1>
 
           <p className='hero-sub mt-5 max-w-[35rem] text-[0.95rem] leading-7 text-[#4B5563] lg:mt-7 lg:text-[1.05rem] lg:leading-8'>
             Nous accompagnons les entreprises avec des solutions innovantes en API,
-            automatisation et visibilite numerique pour gagner en efficacite, en
+            automatisation et visibilité numérique pour gagner en efficacité, en
             performance et en impact.
           </p>
 
@@ -88,7 +88,7 @@ const Home = () => {
               href='#services'
               className='eq-button-primary inline-flex min-h-[50px] items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold text-white transition hover:brightness-110'
             >
-              Decouvrir nos services
+              Découvrir nos services
               <ArrowRight className='h-4 w-4' />
             </a>
 
@@ -113,7 +113,7 @@ const Home = () => {
             <div className='relative z-10 mx-auto mt-4 w-full max-w-[320px] rounded-[2rem] bg-white p-3 shadow-[0_24px_52px_-34px_rgba(14,83,183,0.24)] sm:max-w-[420px] lg:mt-10 lg:max-w-[520px]'>
               <img
                 src={homeImage}
-                alt='Illustration des solutions numeriques Equilibre'
+                alt='Illustration des solutions numériques Equilibre'
                 className={`mx-auto w-full rounded-[1.5rem] object-cover ${
                   visualInView ? 'anim-image-in' : 'opacity-0'
                 }`}

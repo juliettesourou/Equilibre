@@ -180,7 +180,11 @@
 }
 
 @layer base {
-  html { scroll-behavior: smooth; }
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
 
   body {
     margin: 0;
@@ -192,6 +196,7 @@
       linear-gradient(180deg, #ffffff 0%, #f7faff 40%, #ffffff 100%);
     color: #000000;
     font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    -webkit-text-size-adjust: 100%;
   }
 
   * { box-sizing: border-box; }

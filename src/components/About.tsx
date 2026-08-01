@@ -3,13 +3,13 @@ import { useInView } from '../hooks/useInView'
 
 const items = [
   "EQUILIBRE, c'est bien plus qu'une agence de communication digitale.",
-  "C'est une equipe unie, portee par un concept fort et une vision claire de l'accompagnement digital.",
-  "Nous agissons comme un partenaire de confiance pour aider chaque client a transformer ses idees en projets ambitieux, coherents et performants.",
+  "C'est une équipe unie, portée par un concept fort et une vision claire de l'accompagnement digital.",
+  "Nous agissons comme un partenaire de confiance pour aider chaque client à transformer ses idées en projets ambitieux, cohérents et performants.",
 ]
 
 const strengths = [
   { label: 'Communication 360°', value: '95%' },
-  { label: 'Marketing numerique', value: '90%' },
+  { label: 'Marketing numérique', value: '90%' },
   { label: 'Technologies web', value: '85%' },
 ]
 
@@ -23,15 +23,15 @@ const About = () => {
         inView ? 'anim-fade-up' : 'opacity-0'
       }`}
     >
-      <p className='text-xs font-semibold uppercase tracking-[0.28em] text-[#E50012]'>A propos</p>
+      <p className='text-xs font-semibold uppercase tracking-[0.28em] text-[#E50012]'>À propos</p>
       <div className='mt-5 grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-start'>
         <div>
           <h2 className='max-w-[14ch] text-3xl font-semibold leading-[1.1] text-[#000000] md:text-4xl'>
-            Une equipe unie, un concept fort, vous avez EQUILIBRE.
+            Une équipe unie, un concept fort : vous avez EQUILIBRE.
           </h2>
           <p className='mt-4 max-w-md text-sm leading-7 text-[#4B5563]'>
-            EQUILIBRE accompagne ses clients avec une approche humaine, strategique
-            et technique pour construire une presence digitale forte et durable.
+            EQUILIBRE accompagne ses clients avec une approche humaine, stratégique
+            et technique pour construire une présence digitale forte et durable.
           </p>
         </div>
         <div className='grid gap-4'>

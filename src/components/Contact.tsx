@@ -13,12 +13,12 @@ type ContactInfo = {
 const whatsappHref = 'https://wa.me/22954345477'
 
 const infos: ContactInfo[] = [
-  { icon: Phone, label: 'Telephone', value: '(+229) 54 34 54 77', href: 'tel:+22954345477' },
+  { icon: Phone, label: 'Téléphone', value: '(+229) 54 34 54 77', href: 'tel:+22954345477' },
   { icon: Mail, label: 'Email', value: 'contact@equilibre.media', href: 'mailto:contact@equilibre.media' },
   {
     icon: MapPin,
     label: 'Adresse',
-    value: "Benin, Abomey-Calavi, Rue Office Notarial en face de l'UAC.",
+    value: "Bénin, Abomey-Calavi, Rue Office Notarial en face de l'UAC.",
     href: null,
   },
 ]
@@ -54,8 +54,8 @@ const Contact = () => {
                   Equilibre
                 </p>
                 <p className='max-w-md text-sm leading-7 text-[#4B5563]'>
-                  Nous concevons des solutions numeriques sur mesure pour aider
-                  votre entreprise a gagner en efficacite et en visibilite.
+                  Nous concevons des solutions numériques sur mesure pour aider
+                  votre entreprise à gagner en efficacité et en visibilité.
                 </p>
               </div>
             </div>
@@ -106,7 +106,7 @@ const Contact = () => {
                 </p>
               </div>
               <span className='rounded-full bg-[#E50012] px-3 py-1 text-xs font-semibold text-white'>
-                Reponse rapide
+                Réponse rapide
               </span>
             </div>
 
@@ -152,7 +152,7 @@ const Contact = () => {
               className='eq-button-primary mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full py-3.5 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:brightness-110'
             >
               <Send className='h-4 w-4' />
-              Send Message
+              Envoyer le message
             </button>
           </form>
         </div>
