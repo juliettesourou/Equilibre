@@ -191,11 +191,13 @@
     scroll-behavior: smooth;
     -webkit-text-size-adjust: 100%;
     text-size-adjust: 100%;
+    overflow-x: hidden;
   }
 
   body {
     margin: 0;
     min-width: 320px;
+    overflow-x: hidden;
     background:
       radial-gradient(circle at 14% 10%, rgba(14, 83, 183, 0.12), transparent 18%),
       radial-gradient(circle at 82% 18%, rgba(229, 0, 18, 0.08), transparent 14%),
@@ -206,7 +208,10 @@
     -webkit-text-size-adjust: 100%;
   }
 
-  * { box-sizing: border-box; }
+  * {
+    box-sizing: border-box;
+    min-width: 0;
+  }
 
   a {
     color: inherit;

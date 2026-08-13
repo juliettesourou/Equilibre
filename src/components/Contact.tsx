@@ -45,25 +45,25 @@ const Contact = () => {
         <div ref={gridRef} className='grid gap-8 xl:grid-cols-[1fr_0.95fr] xl:gap-10'>
           <div
             style={{ animationDelay: '0ms' }}
-            className={`${gridInView ? 'anim-fade-up' : 'opacity-0'}`}
+            className={`min-w-0 ${gridInView ? 'anim-fade-up' : 'opacity-0'}`}
           >
             <div className='flex items-center gap-3'>
-              <img src={logoImage} alt='Logo Equilibre Agency' className='h-20 w-auto object-contain' />
+              <img src={logoImage} alt='Logo Equilibre Agency' className='h-16 w-auto max-w-[11rem] object-contain sm:h-20 sm:max-w-none' />
             </div>
 
-            <div className='mt-8 grid gap-4 sm:grid-cols-2'>
+            <div className='mt-8 grid min-w-0 gap-4 sm:grid-cols-2'>
               {infos.map(({ icon: Icon, label, value, href }) => {
                 const content = (
-                  <div className='eq-outline-card rounded-[1.35rem] p-5 transition hover:border-[#0E53B7]/24 hover:bg-[#f8fbff]'>
-                    <div className='flex items-start gap-3'>
+                  <div className='eq-outline-card min-w-0 rounded-[1.35rem] p-4 transition hover:border-[#0E53B7]/24 hover:bg-[#f8fbff] sm:p-5'>
+                    <div className='flex min-w-0 items-start gap-3'>
                       <span className='mt-1 flex h-10 w-10 items-center justify-center rounded-full bg-[#0E53B7]/10 text-[#0E53B7]'>
                         <Icon className='h-4 w-4' />
                       </span>
-                      <div>
+                      <div className='min-w-0'>
                         <p className='text-[0.72rem] font-semibold uppercase tracking-[0.24em] text-[#E50012]'>
                           {label}
                         </p>
-                        <p className='mt-2 text-sm leading-7 text-[#4B5563]'>{value}</p>
+                        <p className='mt-2 break-words text-sm leading-7 text-[#4B5563]'>{value}</p>
                       </div>
                     </div>
                   </div>
@@ -82,7 +82,7 @@ const Contact = () => {
           <form
             onSubmit={handleSubmit}
             style={{ animationDelay: '140ms' }}
-            className={`eq-card rounded-[1.9rem] p-5 shadow-[0_24px_50px_-38px_rgba(14,83,183,0.2)] sm:p-6 xl:p-8 ${
+            className={`eq-card min-w-0 rounded-[1.9rem] p-4 shadow-[0_24px_50px_-38px_rgba(14,83,183,0.2)] sm:p-6 xl:p-8 ${
               gridInView ? 'anim-fade-up' : 'opacity-0'
             }`}
           >
@@ -91,7 +91,7 @@ const Contact = () => {
                 <p className='text-xs font-semibold uppercase tracking-[0.3em] text-[#E50012]'>
                   Contact
                 </p>
-                <h3 className='mt-2 text-2xl font-semibold text-[#000000]'>Contactez-nous pour toute question.</h3>
+                <h3 className='mt-2 text-xl font-semibold text-[#000000] sm:text-2xl'>Contactez-nous pour toute question.</h3>
                 <p className='mt-2 text-sm leading-7 text-[#4B5563]'>
                   Remplissez le formulaire pour nous envoyer votre demande ou votre question.
                 </p>
@@ -137,7 +137,7 @@ const Contact = () => {
 
             <button
               type='submit'
-              className='eq-button-primary mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full py-3.5 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:brightness-110'
+              className='eq-button-primary mt-6 inline-flex min-h-[52px] w-full items-center justify-center gap-2 rounded-full px-5 py-3.5 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:brightness-110'
             >
               <Send className='h-4 w-4' />
               Envoyer le message

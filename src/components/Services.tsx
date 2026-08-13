@@ -14,19 +14,19 @@ const Services = () => {
         subtitle="De la stratégie à la production, Equilibre accompagne les entreprises avec des services complémentaires pour accélérer leur croissance digitale."
       />
 
-      <div ref={gridRef} className='grid gap-5 md:grid-cols-2 xl:grid-cols-3'>
+      <div ref={gridRef} className='grid gap-4 sm:gap-5 md:grid-cols-2 xl:grid-cols-3'>
         {services.map((service, i) => (
           <article
             key={service.title}
             style={{ animationDelay: `${i * 90}ms` }}
-            className={`glass-card elegant-card eq-card min-w-0 overflow-hidden flex min-h-[290px] flex-col rounded-[1.7rem] p-5 md:min-h-[320px] md:p-7 ${
+            className={`glass-card elegant-card eq-card min-w-0 overflow-hidden flex min-h-[270px] flex-col rounded-[1.7rem] p-4 sm:min-h-[290px] sm:p-5 md:min-h-[320px] md:p-7 ${
               gridInView ? 'anim-fade-up' : 'opacity-0'
             }`}
           >
-            <div className='flex h-16 w-16 items-center justify-center rounded-[1.2rem] bg-[linear-gradient(135deg,#0E53B7_0%,#1765D4_72%,#E50012_100%)] text-white shadow-[0_18px_40px_-25px_rgba(14,83,183,0.35)]'>
-              <service.icon className='h-6 w-6' />
+            <div className='flex h-14 w-14 items-center justify-center rounded-[1.2rem] bg-[linear-gradient(135deg,#0E53B7_0%,#1765D4_72%,#E50012_100%)] text-white shadow-[0_18px_40px_-25px_rgba(14,83,183,0.35)] sm:h-16 sm:w-16'>
+              <service.icon className='h-5 w-5 sm:h-6 sm:w-6' />
             </div>
-            <h3 className='mt-5 max-w-full text-[1.35rem] font-semibold leading-[1.2] text-[#000000] break-words md:mt-6 md:max-w-[16rem] md:text-[1.55rem]'>
+            <h3 className='mt-4 max-w-full text-[1.18rem] font-semibold leading-[1.2] text-[#000000] break-words sm:mt-5 sm:text-[1.35rem] md:mt-6 md:max-w-[16rem] md:text-[1.55rem]'>
               {service.title}
             </h3>
             <p className='mt-4 break-words text-sm leading-7 text-[#4B5563]'>{service.description}</p>

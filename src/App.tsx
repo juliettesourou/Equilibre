@@ -25,8 +25,8 @@ function App() {
 
   if (currentService) {
     return (
-      <div className='min-h-screen bg-[var(--page-bg)] text-[#000000]'>
-      <Navbar activeSection='services' />
+      <div className='min-h-screen bg-[var(--page-bg)] pt-[5.5rem] text-[#000000] md:pt-[6.5rem]'>
+        <Navbar activeSection='services' />
         <ServiceDetailPage service={currentService} />
         <Footer />
         <CookieBanner />
@@ -36,7 +36,7 @@ function App() {
 
   if (pathname === '/mentions-legales') {
     return (
-      <div className='min-h-screen bg-[var(--page-bg)] text-[#000000]'>
+      <div className='min-h-screen bg-[var(--page-bg)] pt-[5.5rem] text-[#000000] md:pt-[6.5rem]'>
         <Navbar />
         <LegalPage
           title='Mentions légales'
@@ -51,7 +51,7 @@ function App() {
 
   if (pathname === '/politique-confidentialite') {
     return (
-      <div className='min-h-screen bg-[var(--page-bg)] text-[#000000]'>
+      <div className='min-h-screen bg-[var(--page-bg)] pt-[5.5rem] text-[#000000] md:pt-[6.5rem]'>
         <Navbar />
         <LegalPage
           title='Politique de confidentialité'
@@ -65,7 +65,7 @@ function App() {
   }
 
   return (
-    <div className='min-h-screen bg-[var(--page-bg)] text-[#000000]'>
+    <div className='min-h-screen bg-[var(--page-bg)] pt-[5.5rem] text-[#000000] md:pt-[6.5rem]'>
       <Navbar activeSection={activeSection} onSectionChange={setActiveSection} />
 
       <div id='home' className='section-shell pt-5'>

@@ -22,22 +22,22 @@ const Experiences = () => {
 
       <div
         ref={ref}
-        className={`eq-card grid gap-4 rounded-[1.6rem] p-5 shadow-[0_22px_46px_-34px_rgba(14,83,183,0.18)] sm:grid-cols-2 xl:grid-cols-4 ${
+        className={`eq-card grid gap-4 rounded-[1.6rem] p-4 shadow-[0_22px_46px_-34px_rgba(14,83,183,0.18)] sm:grid-cols-2 sm:p-5 xl:grid-cols-4 ${
           inView ? 'anim-fade-up' : 'opacity-0'
         }`}
       >
         {metrics.map(({ icon: Icon, value, label }) => (
           <article
             key={`${value}-${label}`}
-            className='eq-outline-card rounded-[1.2rem] px-5 py-4'
+            className='eq-outline-card min-w-0 rounded-[1.2rem] px-4 py-4 sm:px-5'
           >
-            <div className='flex items-center gap-4'>
-              <span className='flex h-12 w-12 items-center justify-center rounded-full bg-[linear-gradient(135deg,rgba(14,83,183,0.14)_0%,rgba(229,0,18,0.08)_100%)] text-[#0E53B7]'>
+            <div className='flex min-w-0 items-center gap-3 sm:gap-4'>
+              <span className='flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[linear-gradient(135deg,rgba(14,83,183,0.14)_0%,rgba(229,0,18,0.08)_100%)] text-[#0E53B7] sm:h-12 sm:w-12'>
                 <Icon className='h-5 w-5' />
               </span>
-              <div>
-                <p className='text-2xl font-semibold text-[#000000]'>{value}</p>
-                <p className='text-sm text-[#4B5563]'>{label}</p>
+              <div className='min-w-0'>
+                <p className='text-[1.8rem] font-semibold text-[#000000] sm:text-2xl'>{value}</p>
+                <p className='break-words text-sm text-[#4B5563]'>{label}</p>
               </div>
             </div>
           </article>

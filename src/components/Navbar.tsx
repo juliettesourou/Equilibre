@@ -38,7 +38,7 @@ const Navbar = ({ activeSection = 'home', onSectionChange }: NavbarProps) => {
   }
 
   return (
-    <header className='sticky top-0 z-50 w-full border-b border-[#0E53B7]/10 bg-white/90 backdrop-blur-2xl'>
+    <header className='fixed inset-x-0 top-0 z-50 w-full border-b border-[#0E53B7]/10 bg-white/90 backdrop-blur-2xl'>
       <div className='section-shell flex items-center justify-between py-3 md:py-4'>
         <a href='/' className='flex items-center text-[#000000]'>
           <img src={logoImage} alt='Logo Equilibre Agency' className='h-16 w-auto object-contain md:h-20' />
