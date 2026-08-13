@@ -14,6 +14,12 @@ const Experiences = () => {
 
   return (
     <section>
+      <Title
+        title='Une équipe engagée, des résultats concrets'
+        eyebrow='Notre impact'
+        subtitle='Des chiffres clés pour donner un aperçu de notre expérience, de notre équipe et des projets menés avec nos clients.'
+      />
+
       <div
         ref={ref}
         className={`eq-card grid gap-4 rounded-[1.6rem] p-5 shadow-[0_22px_46px_-34px_rgba(14,83,183,0.18)] sm:grid-cols-2 xl:grid-cols-4 ${
@@ -36,14 +42,6 @@ const Experiences = () => {
             </div>
           </article>
         ))}
-      </div>
-
-      <div className='sr-only'>
-        <Title
-          title='Indicateurs Equilibre'
-          eyebrow='Confiance'
-          subtitle='Indicateurs de confiance et d’accompagnement.'
-        />
       </div>
     </section>
   )

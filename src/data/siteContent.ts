@@ -11,6 +11,12 @@ import serviceFacileLogo from '../assets/img/Logo Service Facile.png'
 import soPlugLogo from '../assets/img/Logo SoPlug.png'
 import raljmLogo from '../assets/img/Logo RALJM.png'
 import crystalAgriLogo from '../assets/img/Logo CRYSTAL AGRI BUSINESS.png'
+import chillsLogo from '../assets/img/Logo/Logo Chills.png'
+import chronomateLogo from '../assets/img/Logo/Logo Chronomate.png'
+import eclLogo from '../assets/img/Logo/logo ECL .png'
+import macNegoceLogo from '../assets/img/Logo/Logo mac negoce .png'
+import akizArtLogo from '../assets/img/Logo/Nouveau logo_AKIZ ART .png'
+import octopusLogo from '../assets/img/Logo/Octopus 1.png'
 
 export type ServiceItem = {
   slug: string
@@ -167,6 +173,21 @@ export const partnerLogos = [
   { src: soPlugLogo, alt: 'Logo SoPlug secondaire' },
   { src: raljmLogo, alt: 'Logo Résidence Autonomie Les Jardins du Marais secondaire' },
   { src: crystalAgriLogo, alt: 'Logo Crystal Agri Business secondaire' },
+]
+
+export const secondaryPartnerLogos = [
+  { src: chillsLogo, alt: 'Logo Chills' },
+  { src: chronomateLogo, alt: 'Logo Chronomate' },
+  { src: eclLogo, alt: 'Logo ECL' },
+  { src: macNegoceLogo, alt: 'Logo Mac Negoce' },
+  { src: akizArtLogo, alt: 'Logo Akiz Art' },
+  { src: octopusLogo, alt: 'Logo Octopus Consulting' },
+  { src: chillsLogo, alt: 'Logo Chills secondaire' },
+  { src: chronomateLogo, alt: 'Logo Chronomate secondaire' },
+  { src: eclLogo, alt: 'Logo ECL secondaire' },
+  { src: macNegoceLogo, alt: 'Logo Mac Negoce secondaire' },
+  { src: akizArtLogo, alt: 'Logo Akiz Art secondaire' },
+  { src: octopusLogo, alt: 'Logo Octopus Consulting secondaire' },
 ]
 
 export const legalNoticeSections = [
