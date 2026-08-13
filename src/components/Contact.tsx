@@ -49,11 +49,6 @@ const Contact = () => {
           >
             <div className='flex items-center gap-3'>
               <img src={logoImage} alt='Logo Equilibre Agency' className='h-20 w-auto object-contain' />
-              <div>
-                <p className='text-[1.05rem] font-semibold uppercase tracking-[0.08em] text-[#000000]'>
-                  {companyName}
-                </p>
-              </div>
             </div>
 
             <div className='mt-8 grid gap-4 sm:grid-cols-2'>
