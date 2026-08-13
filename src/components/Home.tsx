@@ -12,7 +12,7 @@ const miniStats = [
   { value: 'API', label: 'intégrations fluides' },
   { value: 'Auto', label: 'processus simplifiés' },
   { value: 'Web', label: 'présence renforcée' },
-  { value: 'Trafic', label: 'acquisition ciblée' },
+  { value: 'Ads', label: 'trafic qualifié' },
 ]
 
 const heroCards = [
@@ -32,8 +32,8 @@ const heroCards = [
   },
   {
     icon: LineChart,
-    title: 'Acquisition de trafic',
-    text: 'Attirez une audience qualifiée et transformez votre visibilité en opportunités.',
+    title: 'Ads & Trafic',
+    text: 'Attirez une audience qualifiée avec des campagnes ciblées et des leviers d’acquisition efficaces.',
     color: 'bg-[#0B47A1]',
     className: 'sm:col-span-2 lg:absolute lg:bottom-12 lg:right-10 lg:col-span-1',
   },
@@ -60,7 +60,7 @@ const Home = () => {
 
           <p className='hero-sub mt-5 max-w-[35rem] text-[0.95rem] leading-7 text-[#4B5563] lg:mt-7 lg:text-[1.05rem] lg:leading-8'>
             Nous accompagnons les entreprises avec des solutions innovantes en API,
-            automatisation et acquisition de trafic pour gagner en efficacité, en
+            automatisation et Ads & Trafic pour gagner en efficacité, en
             performance et en impact.
           </p>
 

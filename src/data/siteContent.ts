@@ -73,22 +73,22 @@ export const services: ServiceItem[] = [
     benefits: ['Message cohérent', 'Image forte', 'Engagement renforcé'],
   },
   {
-    slug: 'social-ads',
+    slug: 'ads-trafic',
     icon: Megaphone,
-    title: 'Social Ads',
+    title: 'Ads & Trafic',
     description:
-      "Nous créons, pilotons et optimisons les campagnes publicitaires sur les réseaux sociaux et les médias numériques.",
+      "Nous pilotons vos campagnes publicitaires et vos leviers d'acquisition pour attirer une audience qualifiée et générer des résultats mesurables.",
     points: [
-      'Atteindre la bonne audience',
-      'Réduire le coût des campagnes',
-      'Maximiser le retour sur investissement',
+      'Campagnes sponsorisées ciblées',
+      'Acquisition de trafic qualifié',
+      'Optimisation continue des performances',
     ],
     details: [
-      'Paramétrage de campagnes Meta, LinkedIn et autres plateformes pertinentes.',
-      'Production de messages publicitaires pensés pour la conversion.',
-      'Suivi des résultats et ajustements continus selon les performances.',
+      'Déploiement de campagnes Meta, LinkedIn et autres plateformes pertinentes selon vos objectifs.',
+      "Création de messages et d'annonces pensés pour la visibilité, le clic et la conversion.",
+      "Suivi des sources de trafic, analyse des performances et ajustements continus pour améliorer le retour sur investissement.",
     ],
-    benefits: ['Audience qualifiée', 'Budget maîtrisé', 'Résultats mesurables'],
+    benefits: ['Audience qualifiée', 'Trafic utile', 'Résultats mesurables'],
   },
   {
     slug: 'developpement-web',
@@ -143,24 +143,6 @@ export const services: ServiceItem[] = [
       'Méthode de suivi claire pour garantir qualité et réactivité.',
     ],
     benefits: ['Souplesse', 'Gain de temps', 'Expertise mobilisable rapidement'],
-  },
-  {
-    slug: 'acquisition-de-trafic',
-    icon: BarChart3,
-    title: 'Acquisition de trafic',
-    description:
-      'Nous mettons en place des actions ciblées pour attirer une audience qualifiée vers votre site et vos offres.',
-    points: [
-      'Campagnes orientées visibilité et conversion',
-      'Optimisation SEO et contenus d’acquisition',
-      'Suivi des sources de trafic et des performances',
-    ],
-    details: [
-      'Déploiement de leviers d’acquisition adaptés à vos objectifs commerciaux.',
-      'Optimisation des pages et contenus pour améliorer la découverte de votre offre.',
-      'Analyse des parcours pour transformer le trafic en opportunités concrètes.',
-    ],
-    benefits: ['Trafic qualifié', 'Visibilité durable', 'Opportunités mieux ciblées'],
   },
 ]
 

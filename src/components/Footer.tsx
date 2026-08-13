@@ -6,7 +6,7 @@ const socials = [
   { label: 'Facebook', href: 'https://www.facebook.com/EquilibreAgency' },
   { label: 'Instagram', href: 'https://www.instagram.com/agency.equilibre/' },
   { label: 'LinkedIn', href: 'https://www.linkedin.com/company/equilibre-agency/' },
-  { label: 'Twitter', href: 'https://x.com/name' },
+  { label: 'X', href: 'https://x.com/name' },
 ]
 
 const Footer = () => {

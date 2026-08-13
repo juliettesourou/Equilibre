@@ -6,8 +6,8 @@ import logoImage from '../assets/img/logo.png'
 const links = [
   { href: '/#home', label: 'Accueil', id: 'home' },
   { href: '/#about', label: 'À propos', id: 'about' },
-  { href: '/#services', label: 'Services', id: 'services' },
-  { href: '/#projects', label: 'Réalisations', id: 'projects' },
+  { href: '/#services', label: 'Nos services', id: 'services' },
+  { href: '/#projects', label: 'Nos réalisations', id: 'projects' },
   { href: '/#contact', label: 'Contact', id: 'contact' },
 ]
 
@@ -44,13 +44,13 @@ const Navbar = ({ activeSection = 'home', onSectionChange }: NavbarProps) => {
           <img src={logoImage} alt='Logo Equilibre Agency' className='h-16 w-auto object-contain md:h-20' />
         </a>
 
-        <nav className='hidden min-w-[48rem] items-center justify-center gap-1 rounded-full border border-[#0E53B7]/10 bg-white px-5 py-1.5 text-sm text-[#111827] shadow-[0_18px_45px_-34px_rgba(14,83,183,0.25)] md:flex lg:min-w-[60rem]'>
+        <nav className='hidden min-w-[48rem] items-center gap-2 rounded-full border border-[#0E53B7]/10 bg-white px-4 py-1.5 text-base font-medium text-[#111827] shadow-[0_18px_45px_-34px_rgba(14,83,183,0.25)] md:flex lg:min-w-[60rem]'>
           {links.map(({ href, label, id }) => (
             <a
               key={label}
               href={href}
               onClick={(event) => handleSectionNavigation(event, id)}
-              className={`relative rounded-full border px-5 py-2.5 transition hover:border-[#0E53B7]/22 hover:bg-[#0E53B7]/5 hover:text-[#0E53B7] ${
+              className={`relative flex-1 rounded-full border px-6 py-3 text-center transition hover:border-[#0E53B7]/22 hover:bg-[#0E53B7]/5 hover:text-[#0E53B7] ${
                 isHomePage && activeSection === id
                   ? 'border-transparent bg-transparent font-semibold text-[#0E53B7]'
                   : 'border-transparent'

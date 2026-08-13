@@ -24,32 +24,44 @@ export const useActiveSection = () => {
       }
     }
 
+    const syncWithScroll = () => {
+      const viewportMarker = window.innerHeight * 0.4
+      let nextActiveSection = sectionIds[0]
+      let closestDistance = Number.POSITIVE_INFINITY
+
+      for (const id of sectionIds) {
+        const section = document.getElementById(id)
+        if (!section) {
+          continue
+        }
+
+        const rect = section.getBoundingClientRect()
+
+        if (rect.top <= viewportMarker && rect.bottom > viewportMarker) {
+          setActiveSection(id)
+          return
+        }
+
+        const distanceToMarker = Math.abs(rect.top - viewportMarker)
+        if (distanceToMarker < closestDistance) {
+          closestDistance = distanceToMarker
+          nextActiveSection = id
+        }
+      }
+
+      setActiveSection(nextActiveSection)
+    }
+
     window.addEventListener('hashchange', syncWithHash)
+    window.addEventListener('scroll', syncWithScroll, { passive: true })
+    window.addEventListener('resize', syncWithScroll)
+    syncWithHash()
+    syncWithScroll()
 
-    const observers = sectionIds
-      .map((id) => document.getElementById(id))
-      .filter((section): section is HTMLElement => Boolean(section))
-      .map((section) => {
-        const observer = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((entry) => {
-              if (entry.isIntersecting) {
-                setActiveSection(entry.target.id)
-              }
-            })
-          },
-          {
-            rootMargin: '-35% 0px -45% 0px',
-            threshold: 0.2,
-          },
-        )
-
-        observer.observe(section)
-        return observer
-      })
     return () => {
       window.removeEventListener('hashchange', syncWithHash)
-      observers.forEach((observer) => observer.disconnect())
+      window.removeEventListener('scroll', syncWithScroll)
+      window.removeEventListener('resize', syncWithScroll)
     }
   }, [])
 
