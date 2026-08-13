@@ -1,83 +1,7 @@
-import {
-  ArrowRight,
-  BarChart3,
-  Brush,
-  Code2,
-  Megaphone,
-  Network,
-  Share2,
-} from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import Title from './Title'
 import { useInView } from '../hooks/useInView'
-
-const services = [
-  {
-    icon: BarChart3,
-    title: 'Stratégie digitale',
-    description:
-      "Nous accompagnons les entreprises dans la mise en place d'une stratégie numérique claire pour renforcer leur présence en ligne et leur positionnement.",
-    points: [
-      'Augmenter la visibilité sur Internet',
-      'Développer la notoriété de la marque',
-      'Analyser les performances digitales',
-    ],
-  },
-  {
-    icon: Share2,
-    title: 'Communication digitale',
-    description:
-      "Nous concevons une communication à 360 degrés pour garantir une présence cohérente sur l'ensemble des canaux digitaux.",
-    points: [
-      'Stratégie de communication adaptée',
-      'Présence cohérente sur les canaux',
-      'Visibilité de marque renforcée',
-    ],
-  },
-  {
-    icon: Megaphone,
-    title: 'Social Ads',
-    description:
-      "Nous créons, pilotons et optimisons les campagnes publicitaires sur les réseaux sociaux et les médias numériques.",
-    points: [
-      'Atteindre la bonne audience',
-      'Réduire le coût des campagnes',
-      'Maximiser le retour sur investissement',
-    ],
-  },
-  {
-    icon: Code2,
-    title: 'Développement web',
-    description:
-      'Nous développons des solutions numériques sur mesure avec des technologies modernes, selon les besoins des clients.',
-    points: [
-      'Sites web et applications web',
-      'Applications mobiles et logiciels',
-      'ERP et outils sur mesure',
-    ],
-  },
-  {
-    icon: Brush,
-    title: 'Création de contenu',
-    description:
-      "Nous accompagnons les entreprises dans la construction d'une identité visuelle forte, créative et mémorable.",
-    points: [
-      'Logos et chartes graphiques',
-      'Visuels et contenus éditoriaux',
-      'Image de marque originale',
-    ],
-  },
-  {
-    icon: Network,
-    title: 'Externalisation de services',
-    description:
-      "Nous mettons à disposition notre expertise pour prendre en charge certaines missions techniques à coût compétitif.",
-    points: [
-      'Sous-traitance de missions ciblées',
-      'Ressources et expertise dédiées',
-      'Prestations fiables et rentables',
-    ],
-  },
-]
+import { services } from '../data/siteContent'
 
 const Services = () => {
   const [gridRef, gridInView] = useInView()
@@ -116,7 +40,7 @@ const Services = () => {
             </div>
             <div className='mt-auto pt-7'>
               <a
-                href='#contact'
+                href={`/services/${service.slug}`}
                 className='inline-flex items-center gap-2 text-sm font-semibold text-[#0E53B7] transition hover:text-[#E50012]'
               >
                 En savoir plus

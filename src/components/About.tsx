@@ -23,8 +23,7 @@ const About = () => {
         inView ? 'anim-fade-up' : 'opacity-0'
       }`}
     >
-      <p className='text-xs font-semibold uppercase tracking-[0.28em] text-[#E50012]'>À propos</p>
-      <div className='mt-5 grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-start'>
+      <div className='grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-start'>
         <div>
           <h2 className='max-w-[14ch] text-3xl font-semibold leading-[1.1] text-[#000000] md:text-4xl'>
             Une équipe unie, un concept fort : vous avez EQUILIBRE.

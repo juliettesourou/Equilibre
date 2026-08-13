@@ -2,6 +2,7 @@ import { Mail, MapPin, Phone, Send } from 'lucide-react'
 import { useInView } from '../hooks/useInView'
 import { useState } from 'react'
 import logoImage from '../assets/img/logo.png'
+import { companyName, emailAddress, phoneDisplay, phoneHref } from '../data/siteContent'
 
 type ContactInfo = {
   icon: typeof Mail
@@ -10,11 +11,9 @@ type ContactInfo = {
   href: string | null
 }
 
-const whatsappHref = 'https://wa.me/22954345477'
-
 const infos: ContactInfo[] = [
-  { icon: Phone, label: 'Téléphone', value: '(+229) 54 34 54 77', href: 'tel:+22954345477' },
-  { icon: Mail, label: 'Email', value: 'contact@equilibre.media', href: 'mailto:contact@equilibre.media' },
+  { icon: Phone, label: 'Téléphone', value: phoneDisplay, href: phoneHref },
+  { icon: Mail, label: 'Email', value: emailAddress, href: `mailto:${emailAddress}` },
   {
     icon: MapPin,
     label: 'Adresse',
@@ -29,10 +28,11 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    const text = encodeURIComponent(
-      `Bonjour Equilibre,\n\nNom: ${form.nom}\nEmail: ${form.email}\nSujet: ${form.sujet}\n\nMessage:\n${form.message}`
+    const subject = encodeURIComponent(form.sujet)
+    const body = encodeURIComponent(
+      `Bonjour ${companyName},\n\nNom: ${form.nom}\nEmail: ${form.email}\n\nMessage:\n${form.message}`
     )
-    window.open(`${whatsappHref}?text=${text}`, '_blank', 'noreferrer')
+    window.location.href = `mailto:${emailAddress}?subject=${subject}&body=${body}`
   }
 
   const field =
@@ -48,14 +48,10 @@ const Contact = () => {
             className={`${gridInView ? 'anim-fade-up' : 'opacity-0'}`}
           >
             <div className='flex items-center gap-3'>
-              <img src={logoImage} alt='Logo Equilibre Agency' className='h-14 w-auto object-contain' />
+              <img src={logoImage} alt='Logo Equilibre Agency' className='h-20 w-auto object-contain' />
               <div>
                 <p className='text-[1.05rem] font-semibold uppercase tracking-[0.08em] text-[#000000]'>
-                  Equilibre
-                </p>
-                <p className='max-w-md text-sm leading-7 text-[#4B5563]'>
-                  Nous concevons des solutions numériques sur mesure pour aider
-                  votre entreprise à gagner en efficacité et en visibilité.
+                  {companyName}
                 </p>
               </div>
             </div>
@@ -105,9 +101,6 @@ const Contact = () => {
                   Remplissez le formulaire pour nous envoyer votre demande ou votre question.
                 </p>
               </div>
-              <span className='rounded-full bg-[#E50012] px-3 py-1 text-xs font-semibold text-white'>
-                Réponse rapide
-              </span>
             </div>
 
             <div className='grid gap-4 sm:grid-cols-2'>

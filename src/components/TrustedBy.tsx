@@ -1,18 +1,8 @@
 import Title from './Title'
 import { useInView } from '../hooks/useInView'
-import serviceFacileLogo from '../assets/img/Logo Service Facile.png'
-import soPlugLogo from '../assets/img/Logo SoPlug.png'
-import raljmLogo from '../assets/img/Logo RALJM.png'
-import crystalAgriLogo from '../assets/img/Logo CRYSTAL AGRI BUSINESS.png'
+import { partnerLogos } from '../data/siteContent'
 
-const logos = [
-  { src: serviceFacileLogo, alt: 'Logo Service Facile' },
-  { src: soPlugLogo, alt: 'Logo SoPlug' },
-  { src: raljmLogo, alt: 'Logo Résidence Autonomie Les Jardins du Marais' },
-  { src: crystalAgriLogo, alt: 'Logo Crystal Agri Business' },
-]
-
-const marqueeLogos = [...logos, ...logos]
+const marqueeLogos = [...partnerLogos, ...partnerLogos]
 
 const TrustedBy = () => {
   const [ref, inView] = useInView(0.15)
@@ -38,13 +28,9 @@ const TrustedBy = () => {
           {marqueeLogos.map((logo, index) => (
             <div
               key={`${logo.alt}-${index}`}
-              className='flex h-24 w-[220px] shrink-0 items-center justify-center rounded-[50px] border border-white/10 bg-white px-4 shadow-[0_22px_44px_-34px_rgba(0,0,0,0.28)] sm:h-28 sm:w-[250px] sm:px-5'
+              className='flex h-24 w-[220px] shrink-0 items-center justify-center rounded-[1.6rem] border border-white/70 bg-white px-4 shadow-[0_22px_44px_-34px_rgba(0,0,0,0.28)] sm:h-28 sm:w-[250px] sm:px-5'
             >
-              <img
-                src={logo.src}
-                alt={logo.alt}
-                className='max-h-[62px] w-full object-contain sm:max-h-[72px]'
-              />
+              <img src={logo.src} alt={logo.alt} className='max-h-[62px] w-full object-contain sm:max-h-[72px]' />
             </div>
           ))}
         </div>

@@ -4,7 +4,6 @@ import {
   Cog,
   LineChart,
   MessageCircle,
-  Sparkles,
 } from 'lucide-react'
 import homeImage from '../assets/img/home.jpeg'
 import { useInView } from '../hooks/useInView'
@@ -13,6 +12,7 @@ const miniStats = [
   { value: 'API', label: 'intégrations fluides' },
   { value: 'Auto', label: 'processus simplifiés' },
   { value: 'Web', label: 'présence renforcée' },
+  { value: 'Trafic', label: 'acquisition ciblée' },
 ]
 
 const heroCards = [
@@ -32,8 +32,8 @@ const heroCards = [
   },
   {
     icon: LineChart,
-    title: 'Visibilité numérique',
-    text: 'Attirez plus de clients et développez votre présence en ligne.',
+    title: 'Acquisition de trafic',
+    text: 'Attirez une audience qualifiée et transformez votre visibilité en opportunités.',
     color: 'bg-[#0B47A1]',
     className: 'sm:col-span-2 lg:absolute lg:bottom-12 lg:right-10 lg:col-span-1',
   },
@@ -50,26 +50,21 @@ const Home = () => {
 
       <div className='grid items-center gap-10 px-5 py-8 lg:grid-cols-[0.9fr_1.1fr] lg:px-10 lg:py-14 xl:px-12'>
         <div className='relative z-10 max-w-2xl lg:pr-4'>
-          <div className='hero-eyebrow inline-flex items-center gap-2 rounded-full border border-[#0E53B7]/12 bg-white px-4 py-2 text-[0.72rem] font-semibold uppercase tracking-[0.28em] text-[#0E53B7] shadow-[0_16px_36px_-26px_rgba(14,83,183,0.26)]'>
-            <Sparkles className='h-4 w-4 text-[#E50012]' />
-            Equilibre Agency
-          </div>
-
-          <h1 className='hero-title mt-6 max-w-[12ch] text-[2.35rem] font-bold leading-[1.04] text-[#000000] sm:text-[3.1rem] lg:max-w-[11.5ch] lg:text-[4.15rem]'>
+          <h1 className='hero-title max-w-[12ch] text-[2.35rem] font-bold leading-[1.04] text-[#000000] sm:text-[3.1rem] lg:max-w-[11.5ch] lg:text-[4.15rem]'>
             Des solutions numériques
             <br />
-            équilibrées pour faire
+            pour faire
             <br />
             <span className='eq-accent-text'>évoluer</span> votre entreprise
           </h1>
 
           <p className='hero-sub mt-5 max-w-[35rem] text-[0.95rem] leading-7 text-[#4B5563] lg:mt-7 lg:text-[1.05rem] lg:leading-8'>
             Nous accompagnons les entreprises avec des solutions innovantes en API,
-            automatisation et visibilité numérique pour gagner en efficacité, en
+            automatisation et acquisition de trafic pour gagner en efficacité, en
             performance et en impact.
           </p>
 
-          <div className='hero-meta mt-5 grid gap-3 sm:grid-cols-3 lg:mt-7 lg:flex lg:flex-wrap'>
+          <div className='hero-meta mt-5 grid gap-3 sm:grid-cols-2 lg:mt-7 lg:flex lg:flex-wrap'>
             {miniStats.map((item) => (
               <div
                 key={item.value}
