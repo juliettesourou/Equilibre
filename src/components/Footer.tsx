@@ -1,6 +1,6 @@
 import logoImage from '../assets/img/logo.png'
 import type { MouseEvent } from 'react'
-import { companyName, emailAddress, phoneDisplay, phoneHref } from '../data/siteContent'
+import { emailAddress, phoneDisplay, phoneHref } from '../data/siteContent'
 
 const socials = [
   { label: 'Facebook', href: 'https://www.facebook.com/EquilibreAgency' },
